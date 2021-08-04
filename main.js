@@ -49,6 +49,83 @@ var AppInjector = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/angular/angular.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/angular/angular.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FuZ3VsYXIvYW5ndWxhci5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/angular/angular.component.html":
+/*!************************************************!*\
+  !*** ./src/app/angular/angular.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-tab-group (selectedTabChange)=\"tabChange($event)\" mat-align-tabs=\"center\" animationDuration=\"0ms\">\n    <mat-tab label=\"Angular\">\n        <app-data  imageBaseUrl=\"/assets/images/angular/\" [data]=\"angularData.angular\"></app-data>\n    </mat-tab>\n    <mat-tab label=\"Topic\">\n        <app-data imageBaseUrl=\"/assets/images/angular/\" [data]=\"angularData.angular\"></app-data>\n    </mat-tab>\n</mat-tab-group>"
+
+/***/ }),
+
+/***/ "./src/app/angular/angular.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/angular/angular.component.ts ***!
+  \**********************************************/
+/*! exports provided: AngularComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AngularComponent", function() { return AngularComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _files_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../files/angular */ "./src/app/files/angular.ts");
+/* harmony import */ var _files_angularQuestion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../files/angularQuestion */ "./src/app/files/angularQuestion.ts");
+
+
+
+
+
+var AngularComponent = /** @class */ (function () {
+    function AngularComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.angularData = '';
+        this.expandAll = false;
+        this.angularData = _files_angular__WEBPACK_IMPORTED_MODULE_3__["data"];
+    }
+    AngularComponent.prototype.getHtml = function (val) {
+        return this.sanitizer.bypassSecurityTrustScript(val);
+    };
+    AngularComponent.prototype.ngOnInit = function () {
+    };
+    AngularComponent.prototype.tabChange = function (event) {
+        if (event.index == 0) {
+            this.angularData = _files_angular__WEBPACK_IMPORTED_MODULE_3__["data"];
+        }
+        else if (event.index == 1) {
+            this.angularData = _files_angularQuestion__WEBPACK_IMPORTED_MODULE_4__["questions"];
+        }
+    };
+    AngularComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-angular',
+            template: __webpack_require__(/*! ./angular.component.html */ "./src/app/angular/angular.component.html"),
+            styles: [__webpack_require__(/*! ./angular.component.css */ "./src/app/angular/angular.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+    ], AngularComponent);
+    return AngularComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -62,26 +139,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home.component */ "./src/app/home.component.ts");
-/* harmony import */ var _details_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./details.component */ "./src/app/details.component.ts");
-/* harmony import */ var _heros_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./heros.component */ "./src/app/heros.component.ts");
-/* harmony import */ var _hero_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hero.component */ "./src/app/hero.component.ts");
-/* harmony import */ var _highlightdir_highlightdir_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./highlightdir/highlightdir.component */ "./src/app/highlightdir/highlightdir.component.ts");
-/* harmony import */ var _date_date_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./date/date.component */ "./src/app/date/date.component.ts");
-/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _first_first_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./first/first.component */ "./src/app/first/first.component.ts");
-/* harmony import */ var _my_guard_guard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./my-guard.guard */ "./src/app/my-guard.guard.ts");
-/* harmony import */ var _sort_sort_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./sort/sort.component */ "./src/app/sort/sort.component.ts");
-/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./list/list.component */ "./src/app/list/list.component.ts");
-/* harmony import */ var _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./hashing/hashing.component */ "./src/app/hashing/hashing.component.ts");
-/* harmony import */ var _bst_bst_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./bst/bst.component */ "./src/app/bst/bst.component.ts");
-
-
-
-
-
-
-
+/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
+/* harmony import */ var _data_structure_data_structure_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data-structure/data-structure.component */ "./src/app/data-structure/data-structure.component.ts");
+/* harmony import */ var _angular_angular_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./angular/angular.component */ "./src/app/angular/angular.component.ts");
+/* harmony import */ var _javascript_javascript_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./javascript/javascript.component */ "./src/app/javascript/javascript.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
 
 
 
@@ -92,33 +155,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
+    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
+    { path: 'css', component: _css_css_component__WEBPACK_IMPORTED_MODULE_8__["CssComponent"] },
     {
-        path: 'first-component',
-        component: _first_first_component__WEBPACK_IMPORTED_MODULE_10__["FirstComponent"],
-        children: [
-            {
-                path: 'child-a',
-                component: _hero_component__WEBPACK_IMPORTED_MODULE_6__["HeroComponent"],
-            },
-            {
-                path: 'child-b',
-                component: _date_date_component__WEBPACK_IMPORTED_MODULE_8__["DateComponent"],
-            },
-        ],
+        path: 'data-structure', component: _data_structure_data_structure_component__WEBPACK_IMPORTED_MODULE_4__["DataStructureComponent"]
     },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: _home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
-    { path: 'detail/:id', component: _details_component__WEBPACK_IMPORTED_MODULE_4__["DetailsComponent"] },
-    { path: 'heros', component: _heros_component__WEBPACK_IMPORTED_MODULE_5__["HerosComponent"] },
-    { path: 'sort', component: _sort_sort_component__WEBPACK_IMPORTED_MODULE_12__["SortComponent"] },
-    { path: 'hashing', component: _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_14__["HashingComponent"] },
-    { path: 'bst', component: _bst_bst_component__WEBPACK_IMPORTED_MODULE_15__["BSTComponent"] },
-    { path: 'list', component: _list_list_component__WEBPACK_IMPORTED_MODULE_13__["ListComponent"] },
-    { path: 'bst', component: _bst_bst_component__WEBPACK_IMPORTED_MODULE_15__["BSTComponent"] },
-    { path: 'hero/:id', component: _hero_component__WEBPACK_IMPORTED_MODULE_6__["HeroComponent"] },
-    { path: 'date', component: _date_date_component__WEBPACK_IMPORTED_MODULE_8__["DateComponent"], canActivate: [_my_guard_guard__WEBPACK_IMPORTED_MODULE_11__["MyGuardGuard"]] },
-    { path: 'attributeDirective', component: _highlightdir_highlightdir_component__WEBPACK_IMPORTED_MODULE_7__["HighlightdirComponent"] },
-    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"] }
+    {
+        path: 'angular', component: _angular_angular_component__WEBPACK_IMPORTED_MODULE_5__["AngularComponent"]
+    },
+    {
+        path: 'javascript', component: _javascript_javascript_component__WEBPACK_IMPORTED_MODULE_6__["JavascriptComponent"]
+    },
+    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_3__["NotFoundComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -136,6 +185,17 @@ var AppRoutingModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/app.component.css":
+/*!***********************************!*\
+  !*** ./src/app/app.component.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".header{\r\n    background-color: #20232a;\r\n    height: 60px;\r\n    padding-left: 150px;\r\n    position: fixed;\r\n    z-index: 99;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    margin-bottom: 10px;\r\n}\r\n.main-body{\r\n    width: 100%;\r\n    margin:auto;\r\n}\r\n.scroll-to-top {\r\n    position: fixed;\r\n    bottom: 15px;\r\n    right: 15px;\r\n    opacity: 0;\r\n    z-index: 1;\r\n    transition: all .2s ease-in-out;\r\n   }\r\n.show-scrollTop {\r\n    opacity: 1;\r\n    transition: all .2s ease-in-out;\r\n   }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsV0FBVztJQUNYLFdBQVc7SUFDWCxzQkFBc0I7SUFDdEIsbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsV0FBVztBQUNmO0FBQ0E7SUFDSSxlQUFlO0lBQ2YsWUFBWTtJQUNaLFdBQVc7SUFDWCxVQUFVO0lBQ1YsVUFBVTtJQUNWLCtCQUErQjtHQUNoQztBQUNBO0lBQ0MsVUFBVTtJQUNWLCtCQUErQjtHQUNoQyIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlcntcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyMDIzMmE7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE1MHB4O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgei1pbmRleDogOTk7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG59XHJcbi5tYWluLWJvZHl7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1hcmdpbjphdXRvO1xyXG59XHJcbi5zY3JvbGwtdG8tdG9wIHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGJvdHRvbTogMTVweDtcclxuICAgIHJpZ2h0OiAxNXB4O1xyXG4gICAgb3BhY2l0eTogMDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2UtaW4tb3V0O1xyXG4gICB9XHJcbiAgIC5zaG93LXNjcm9sbFRvcCB7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gICAgdHJhbnNpdGlvbjogYWxsIC4ycyBlYXNlLWluLW91dDtcclxuICAgfSJdfQ== */"
+
+/***/ }),
+
 /***/ "./src/app/app.component.html":
 /*!************************************!*\
   !*** ./src/app/app.component.html ***!
@@ -143,7 +203,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mr-3\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n</div>\n<div class=\"row\">\n    <nav>\n        <a routerLink=\"/home\">Home</a>&nbsp;\n        <a routerLink=\"/sort\">Sort</a>&nbsp;\n        <a routerLink=\"/list\">List</a>&nbsp;\n        <a routerLink=\"/bst\">BST</a>&nbsp;\n        <a routerLink=\"/hashing\">Hashing</a>&nbsp;\n        <a routerLink=\"/date\">Gaurd route</a>&nbsp;\n        <a routerLink=\"/heros\">Heros</a>&nbsp;\n        <a routerLink=\"/first-component\">first-component</a> \n        <a routerLink=\"../second-component\">Relative Route to second component</a>\n        <a routerLink=\"/attributeDirective\">attributeDirective</a>\n      </nav>\n      \n</div>\n<!-- <app-game1></app-game1> -->\n\n<div class=\"row\">\n    <router-outlet></router-outlet>\n\n</div>\n"
+module.exports = "\r\n <div class=\"header\">\r\n    <app-header></app-header>\r\n</div>\r\n<div class=\"space\">\r\n\r\n</div>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"main-body\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"scroll-to-top\" [ngClass]=\"{'show-scrollTop': windowScrolled}\">\r\n    <button (click)=\"scrollToTop()\">\r\n            <mat-icon aria-hidden=\"false\" aria-label=\"Example arrow_upward icon\">arrow_upward</mat-icon>\r\n    </button>\r\n  </div>"
 
 /***/ }),
 
@@ -159,17 +219,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(document) {
+        this.document = document;
+        this.windowScrolled = false;
         this.title = 'my-app';
     }
+    AppComponent.prototype.onWindowScroll = function () {
+        if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+            this.windowScrolled = true;
+        }
+        else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+            this.windowScrolled = false;
+        }
+    };
+    AppComponent.prototype.scrollToTop = function () {
+        (function smoothscroll() {
+            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(smoothscroll);
+                window.scrollTo(0, currentScroll - (currentScroll / 8));
+            }
+        })();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])("window:scroll", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], AppComponent.prototype, "onWindowScroll", null);
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html")
-        })
+            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].Emulated,
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Document])
     ], AppComponent);
     return AppComponent;
 }());
@@ -194,35 +285,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.component */ "./src/app/home.component.ts");
-/* harmony import */ var _details_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./details.component */ "./src/app/details.component.ts");
-/* harmony import */ var _hero_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./hero.component */ "./src/app/hero.component.ts");
-/* harmony import */ var _heros_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./heros.component */ "./src/app/heros.component.ts");
-/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./base.component */ "./src/app/base.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _highlight_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./highlight.directive */ "./src/app/highlight.directive.ts");
-/* harmony import */ var _highlightdir_highlightdir_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./highlightdir/highlightdir.component */ "./src/app/highlightdir/highlightdir.component.ts");
-/* harmony import */ var _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fullcalendar/angular */ "./node_modules/@fullcalendar/angular/fesm5/fullcalendar-angular.js");
-/* harmony import */ var _chilld_chilld_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./chilld/chilld.component */ "./src/app/chilld/chilld.component.ts");
-/* harmony import */ var _date_date_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./date/date.component */ "./src/app/date/date.component.ts");
-/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.module.js");
-/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(ng_pick_datetime__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-/* harmony import */ var _services_service1_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/service1.service */ "./src/app/services/service1.service.ts");
-/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _first_first_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./first/first.component */ "./src/app/first/first.component.ts");
-/* harmony import */ var _second_second_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./second/second.component */ "./src/app/second/second.component.ts");
-/* harmony import */ var src_interceptor__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! src/interceptor */ "./src/interceptor/index.ts");
-/* harmony import */ var _uppercase_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./uppercase.pipe */ "./src/app/uppercase.pipe.ts");
-/* harmony import */ var _sort_sort_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./sort/sort.component */ "./src/app/sort/sort.component.ts");
-/* harmony import */ var highcharts_angular__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! highcharts-angular */ "./node_modules/highcharts-angular/fesm2015/highcharts-angular.js");
-/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./list/list.component */ "./src/app/list/list.component.ts");
-/* harmony import */ var _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./hashing/hashing.component */ "./src/app/hashing/hashing.component.ts");
-/* harmony import */ var _bst_bst_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./bst/bst.component */ "./src/app/bst/bst.component.ts");
-
-
-
-
+/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
+/* harmony import */ var _services_service1_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/service1.service */ "./src/app/services/service1.service.ts");
+/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
+/* harmony import */ var src_interceptor__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/interceptor */ "./src/interceptor/index.ts");
+/* harmony import */ var _sort_sort_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sort/sort.component */ "./src/app/sort/sort.component.ts");
+/* harmony import */ var highcharts_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! highcharts-angular */ "./node_modules/highcharts-angular/fesm2015/highcharts-angular.js");
+/* harmony import */ var _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hashing/hashing.component */ "./src/app/hashing/hashing.component.ts");
+/* harmony import */ var _bst_bst_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bst/bst.component */ "./src/app/bst/bst.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./list/list.component */ "./src/app/list/list.component.ts");
+/* harmony import */ var _data_structure_data_structure_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./data-structure/data-structure.component */ "./src/app/data-structure/data-structure.component.ts");
+/* harmony import */ var _angular_angular_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./angular/angular.component */ "./src/app/angular/angular.component.ts");
+/* harmony import */ var _safe_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./safe.pipe */ "./src/app/safe.pipe.ts");
+/* harmony import */ var _data_data_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./data/data.component */ "./src/app/data/data.component.ts");
+/* harmony import */ var _javascript_javascript_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./javascript/javascript.component */ "./src/app/javascript/javascript.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _css_css_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./css/css.component */ "./src/app/css/css.component.ts");
 
 
 
@@ -256,107 +338,44 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
-                _details_component__WEBPACK_IMPORTED_MODULE_7__["DetailsComponent"],
-                _hero_component__WEBPACK_IMPORTED_MODULE_8__["HeroComponent"],
-                _heros_component__WEBPACK_IMPORTED_MODULE_9__["HerosComponent"],
-                _base_component__WEBPACK_IMPORTED_MODULE_10__["BaseComponent"],
-                _highlight_directive__WEBPACK_IMPORTED_MODULE_12__["HighlightDirective"],
-                _highlightdir_highlightdir_component__WEBPACK_IMPORTED_MODULE_13__["HighlightdirComponent"],
-                _chilld_chilld_component__WEBPACK_IMPORTED_MODULE_15__["ChilldComponent"],
-                _date_date_component__WEBPACK_IMPORTED_MODULE_16__["DateComponent"],
-                _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_20__["NotFoundComponent"],
-                _first_first_component__WEBPACK_IMPORTED_MODULE_21__["FirstComponent"],
-                _second_second_component__WEBPACK_IMPORTED_MODULE_22__["SecondComponent"],
-                _uppercase_pipe__WEBPACK_IMPORTED_MODULE_24__["UppercasePipe"],
-                _sort_sort_component__WEBPACK_IMPORTED_MODULE_25__["SortComponent"],
-                highcharts_angular__WEBPACK_IMPORTED_MODULE_26__["HighchartsChartComponent"],
-                _list_list_component__WEBPACK_IMPORTED_MODULE_27__["ListComponent"],
-                _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_28__["HashingComponent"],
-                _bst_bst_component__WEBPACK_IMPORTED_MODULE_29__["BSTComponent"]
+                _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"],
+                _sort_sort_component__WEBPACK_IMPORTED_MODULE_10__["SortComponent"],
+                highcharts_angular__WEBPACK_IMPORTED_MODULE_11__["HighchartsChartComponent"],
+                _hashing_hashing_component__WEBPACK_IMPORTED_MODULE_12__["HashingComponent"],
+                _bst_bst_component__WEBPACK_IMPORTED_MODULE_13__["BSTComponent"],
+                _list_list_component__WEBPACK_IMPORTED_MODULE_17__["ListComponent"],
+                _data_structure_data_structure_component__WEBPACK_IMPORTED_MODULE_18__["DataStructureComponent"],
+                _angular_angular_component__WEBPACK_IMPORTED_MODULE_19__["AngularComponent"],
+                _safe_pipe__WEBPACK_IMPORTED_MODULE_20__["SafePipe"],
+                _data_data_component__WEBPACK_IMPORTED_MODULE_21__["DataComponent"],
+                _javascript_javascript_component__WEBPACK_IMPORTED_MODULE_22__["JavascriptComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_23__["HeaderComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_24__["HomeComponent"],
+                _css_css_component__WEBPACK_IMPORTED_MODULE_25__["CssComponent"],
             ],
             imports: [
-                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_17__["DateTimePickerModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"],
-                _fullcalendar_angular__WEBPACK_IMPORTED_MODULE_14__["FullCalendarModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatExpansionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatDividerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_15__["MatButtonToggleModule"]
             ],
             providers: [
-                _services_service1_service__WEBPACK_IMPORTED_MODULE_19__["Service1Service"],
-                src_interceptor__WEBPACK_IMPORTED_MODULE_23__["httpInterceptorProviders"],
-                { provide: _services_service__WEBPACK_IMPORTED_MODULE_18__["HeroService"], useExisting: _services_service1_service__WEBPACK_IMPORTED_MODULE_19__["Service1Service"] }
+                _services_service1_service__WEBPACK_IMPORTED_MODULE_7__["Service1Service"],
+                src_interceptor__WEBPACK_IMPORTED_MODULE_9__["httpInterceptorProviders"],
+                { provide: _services_service__WEBPACK_IMPORTED_MODULE_6__["HeroService"], useExisting: _services_service1_service__WEBPACK_IMPORTED_MODULE_7__["Service1Service"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/base.component.ts":
-/*!***********************************!*\
-  !*** ./src/app/base.component.ts ***!
-  \***********************************/
-/*! exports provided: BaseComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return BaseComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-/* harmony import */ var _app_injector_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../app-injector.service */ "./src/app-injector.service.ts");
-
-
-
-
-var BaseComponent = /** @class */ (function () {
-    function BaseComponent() {
-        console.log("constructor called of base");
-        var injector = _app_injector_service__WEBPACK_IMPORTED_MODULE_3__["AppInjector"].getInjector();
-        this.service = injector.get(_services_service__WEBPACK_IMPORTED_MODULE_2__["HeroService"]);
-        console.log('this.ser.abhi from base =', this.service.abhi);
-        this.service.abhi = 'zyz';
-    }
-    BaseComponent.prototype.windowUnload = function ($event) {
-        console.log("Reloading");
-        this.service.heatApi();
-        //  $event.returnValue = 'Your data will be lost!';
-    };
-    BaseComponent.prototype.ngOnInit = function () {
-        console.log('ngOnInit of base get called');
-    };
-    BaseComponent.prototype.getHero = function () {
-        var _this = this;
-        this.service.getHero(this.id).subscribe(function (x) {
-            _this.hero = x[0];
-        });
-    };
-    BaseComponent.prototype.ngOnDestroy = function () {
-        console.log("Destroy   ngOnDestroy called abhishek");
-        alert("234");
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:beforeunload', ['$event']),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], BaseComponent.prototype, "windowUnload", null);
-    BaseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'base',
-            template: 'No Ui',
-            host: { 'window:beforeunload': 'windowUnload' }
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], BaseComponent);
-    return BaseComponent;
 }());
 
 
@@ -721,306 +740,1798 @@ var BSTComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/chilld/chilld.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/chilld/chilld.component.css ***!
-  \*********************************************/
+/***/ "./src/app/css/css.component.css":
+/*!***************************************!*\
+  !*** ./src/app/css/css.component.css ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoaWxsZC9jaGlsbGQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\r\n.border{\r\n    border:1px solid red;\r\n   \r\n}\r\n.box{\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    border: 1px solid rgb(46, 122, 192)\r\n}\r\n.box-item{\r\n    display: inline-block;\r\n    width: 33.33%;\r\n    height: 200px;\r\n    vertical-align: top;\r\n    box-sizing: border-box;\r\n    text-align: center;\r\n}\r\n.q_border{\r\n   \r\n    width: 80%;\r\n    margin:auto;\r\n    height: 100px;\r\n    margin-top: 50px;\r\n    padding-top: 18px;\r\n    box-sizing: border-box;\r\n}\r\n.border_y{\r\n    border: 1px solid yellowgreen;\r\n}\r\n.q_padding{\r\n   padding-top: 100px;\r\n}\r\n.q_margin{\r\n    margin-top: 100px;\r\n}\r\n.flex{\r\n    display: flex;\r\n    width: 100%;\r\n    height: 120px;\r\n    background-color: Silver;\r\n    margin-bottom: 10px;\r\n}\r\n.flex-container {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 240px;\r\n    background-color: Silver;\r\n    margin-bottom: 10px;\r\n}\r\n.flex-item {\r\n    background-color: DeepSkyBlue;\r\n    width: 20%;\r\n    height: 100px;\r\n    margin: 5px;\r\n}\r\n.flex-item1 {\r\n    background-color: DeepSkyBlue;\r\n    width: 20%;\r\n    margin: 5px;\r\n}\r\n.btn{\r\n   margin: 16px; \r\n}\r\n.border1{\r\n    border:1px solid rebeccapurple\r\n}\r\n/*//////////////////////Grid*/\r\n.grid-container{\r\n    display: grid;\r\n    grid-template-columns: auto auto auto;\r\n    background-color: #2196F3;\r\n    padding: 10px;\r\n    margin-top: 20px;\r\n    width: 600px;\r\n    height:400px;\r\n    margin: auto;\r\n    margin-top:15px;\r\n    margin-bottom: 30px;\r\n}\r\n.grid-item{\r\n    background-color: rgba(255, 255, 255, 0.8);\r\n    border: 1px solid rgba(0, 0, 0, 0.8);\r\n    padding: 5px;\r\n    text-align: center;\r\n}\r\n/*Tricks*/\r\n.center1{\r\n    padding: 20px;\r\n    text-align: center;\r\n}\r\n.center2{\r\n    margin: auto;\r\n    width: 50%;\r\n    text-align: center;}\r\n.center3 {\r\n    height: 200px;\r\n    position: relative;\r\n  }\r\n.center3 p {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    \r\n  }\r\n/*Basic*/\r\n.p-box1{\r\n    height: 300px;\r\n    width: 600px;\r\n    border: 1px solid yellowgreen;\r\n    position: relative;\r\n}\r\n.p-box2{\r\n    height: 100px;\r\n    width: 300px;\r\n    border: 1px solid salmon;\r\n}\r\n.p-relative{\r\n    position: relative;\r\n    top: 80px;\r\n    left: 150px;\r\n}\r\n.p-fixed{\r\n    width: 40px;\r\n    height: 40px;\r\n    position: fixed;\r\n    bottom: 0px;\r\n    left: 0px;\r\n}\r\n.p-absolute{\r\n    position: absolute;\r\n    top: 100px;\r\n    left: 100px;\r\n}\r\n.p-sticky{\r\n    position: sticky;\r\n    bottom: 0;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3NzL2Nzcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtJQUNJLG9CQUFvQjs7QUFFeEI7QUFDQTtJQUNJLGdCQUFnQjtJQUNoQixXQUFXO0lBQ1g7QUFDSjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLGFBQWE7SUFDYixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0QixrQkFBa0I7QUFDdEI7QUFDQTs7SUFFSSxVQUFVO0lBQ1YsV0FBVztJQUNYLGFBQWE7SUFDYixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLHNCQUFzQjtBQUMxQjtBQUNBO0lBQ0ksNkJBQTZCO0FBQ2pDO0FBQ0E7R0FDRyxrQkFBa0I7QUFDckI7QUFDQTtJQUNJLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLFdBQVc7SUFDWCxhQUFhO0lBQ2Isd0JBQXdCO0lBQ3hCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksYUFBYTtJQUNiLFdBQVc7SUFDWCxhQUFhO0lBQ2Isd0JBQXdCO0lBQ3hCLG1CQUFtQjtBQUN2QjtBQUVBO0lBQ0ksNkJBQTZCO0lBQzdCLFVBQVU7SUFDVixhQUFhO0lBQ2IsV0FBVztBQUNmO0FBQ0E7SUFDSSw2QkFBNkI7SUFDN0IsVUFBVTtJQUNWLFdBQVc7QUFDZjtBQUNBO0dBQ0csWUFBWTtBQUNmO0FBQ0E7SUFDSTtBQUNKO0FBRUEsNkJBQTZCO0FBQzdCO0lBQ0ksYUFBYTtJQUNiLHFDQUFxQztJQUNyQyx5QkFBeUI7SUFDekIsYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixZQUFZO0lBQ1osWUFBWTtJQUNaLFlBQVk7SUFDWixlQUFlO0lBQ2YsbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSwwQ0FBMEM7SUFDMUMsb0NBQW9DO0lBQ3BDLFlBQVk7SUFDWixrQkFBa0I7QUFDdEI7QUFDQSxTQUFTO0FBRVQ7SUFDSSxhQUFhO0lBQ2Isa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxZQUFZO0lBQ1osVUFBVTtJQUNWLGtCQUFrQixDQUFDO0FBRXZCO0lBQ0ksYUFBYTtJQUNiLGtCQUFrQjtFQUNwQjtBQUNBO0lBQ0Usa0JBQWtCO0lBQ2xCLFFBQVE7SUFDUixTQUFTO0lBQ1QsZ0NBQWdDOztFQUVsQztBQUNGLFFBQVE7QUFFUjtJQUNJLGFBQWE7SUFDYixZQUFZO0lBQ1osNkJBQTZCO0lBQzdCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksYUFBYTtJQUNiLFlBQVk7SUFDWix3QkFBd0I7QUFDNUI7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsV0FBVztBQUNmO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGVBQWU7SUFDZixXQUFXO0lBQ1gsU0FBUztBQUNiO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFdBQVc7QUFDZjtBQUNBO0lBRUksZ0JBQWdCO0lBQ2hCLFNBQVM7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2Nzcy9jc3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYm9yZGVye1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCByZWQ7XHJcbiAgIFxyXG59XHJcbi5ib3h7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2IoNDYsIDEyMiwgMTkyKVxyXG59XHJcbi5ib3gtaXRlbXtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHdpZHRoOiAzMy4zMyU7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnFfYm9yZGVye1xyXG4gICBcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBtYXJnaW46YXV0bztcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDE4cHg7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcbi5ib3JkZXJfeXtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHllbGxvd2dyZWVuO1xyXG59XHJcbi5xX3BhZGRpbmd7XHJcbiAgIHBhZGRpbmctdG9wOiAxMDBweDtcclxufVxyXG4ucV9tYXJnaW57XHJcbiAgICBtYXJnaW4tdG9wOiAxMDBweDtcclxufVxyXG4uZmxleHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBTaWx2ZXI7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG59XHJcbi5mbGV4LWNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogU2lsdmVyO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBEZWVwU2t5Qmx1ZTtcclxuICAgIHdpZHRoOiAyMCU7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbn1cclxuLmZsZXgtaXRlbTEge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogRGVlcFNreUJsdWU7XHJcbiAgICB3aWR0aDogMjAlO1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbn1cclxuLmJ0bntcclxuICAgbWFyZ2luOiAxNnB4OyBcclxufVxyXG4uYm9yZGVyMXtcclxuICAgIGJvcmRlcjoxcHggc29saWQgcmViZWNjYXB1cnBsZVxyXG59XHJcblxyXG4vKi8vLy8vLy8vLy8vLy8vLy8vLy8vLy9HcmlkKi9cclxuLmdyaWQtY29udGFpbmVye1xyXG4gICAgZGlzcGxheTogZ3JpZDtcclxuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogYXV0byBhdXRvIGF1dG87XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjE5NkYzO1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICB3aWR0aDogNjAwcHg7XHJcbiAgICBoZWlnaHQ6NDAwcHg7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgICBtYXJnaW4tdG9wOjE1cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG59XHJcbi5ncmlkLWl0ZW17XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOCk7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLypUcmlja3MqL1xyXG5cclxuLmNlbnRlcjF7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5jZW50ZXIye1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjt9XHJcbiAgICBcclxuLmNlbnRlcjMge1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcbiAgLmNlbnRlcjMgcCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG4gICAgXHJcbiAgfSBcclxuLypCYXNpYyovXHJcblxyXG4ucC1ib3gxe1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICAgIHdpZHRoOiA2MDBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHllbGxvd2dyZWVuO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5wLWJveDJ7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgc2FsbW9uO1xyXG59XHJcbi5wLXJlbGF0aXZle1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdG9wOiA4MHB4O1xyXG4gICAgbGVmdDogMTUwcHg7XHJcbn1cclxuLnAtZml4ZWR7XHJcbiAgICB3aWR0aDogNDBweDtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGJvdHRvbTogMHB4O1xyXG4gICAgbGVmdDogMHB4O1xyXG59XHJcbi5wLWFic29sdXRle1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAxMDBweDtcclxuICAgIGxlZnQ6IDEwMHB4O1xyXG59XHJcbi5wLXN0aWNreXtcclxuICAgIHBvc2l0aW9uOiAtd2Via2l0LXN0aWNreTtcclxuICAgIHBvc2l0aW9uOiBzdGlja3k7XHJcbiAgICBib3R0b206IDA7XHJcbn1cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
-/***/ "./src/app/chilld/chilld.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/chilld/chilld.component.html ***!
-  \**********************************************/
+/***/ "./src/app/css/css.component.html":
+/*!****************************************!*\
+  !*** ./src/app/css/css.component.html ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  chilld works!\n</p>\n"
+module.exports = "<mat-tab-group mat-align-tabs=\"center\" animationDuration=\"0ms\">\n  <mat-tab label=\"Tricks\">\n    <div>\n      <h6>// clear float</h6>\n      <p>If we have use float and element size is bigger that its parent then\n        goes to below to avoid that use clear fix increase parent size fit in </p>\n      <div>\n        <div> .clearfix::after </div>\n        <div> content: \"\";</div>\n        <div> clear: both;</div>\n        <div> display: table;</div>\n        <div>  </div>\n      </div>\n    </div>\n    <p>\n      // use vertical-align :-top :- if div goes to bottom\n    </p>\n    <p>\n      Take item to centre\n    </p>\n    <p>1. Padding, text-align</p>\n    <div class=\"border center1\">\n      <div> padding: 20px; </div>\n      <div>text-align: center;\n      </div>\n    </div>\n    <p>2. margin, width</p>\n    <div class=\"border center2\">\n      <div> margin: auto; </div>\n      <div> width: 50%;</div>\n    </div>\n    <p>3. position, transform</p>\n    <div>\n      /* If the text has multiple lines, add the following: */\n      <div> .center p </div>\n      <div> line-height: 1.5;</div>\n      <div> display: inline-block;</div>\n      <div> vertical-align: middle;</div>\n\n    </div>\n    <div class=\"border center3\">\n      <div> position: absolute;</div>\n      <div> top: 50%;</div>\n      <div> left: 50%;</div>\n      <div> transform: translate(-50%, -50%);</div>\n      <p>\n        Center\n      </p>\n    </div>\n    <p>4. flex</p>\n    <div [style.height]=\"'300px'\" class=\"flex\">\n      <div [style.margin]=\"'auto'\" class=\"flex-item\"> margin: auto; </div>\n    </div>\n  </mat-tab>\n  <mat-tab label=\"Grid\">\n    <div class=\"question\">\n      <ul>\n        <li>display :grid, inline-grid takes only required space //makes Grid</li>\n        <li>grid-template-columns: auto auto auto; 80px 200px auto; makes 3 column based on value</li>\n        <li>grid-template-rows: 80px 200px; works on row</li>\n        <li>grid-column-gap: 50px;</li>\n        <li>grid-raw-gap: 50px;</li>\n        <li>grid-gap: 50px 100px; row column</li>\n      </ul>\n      <div>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"style={'display':'grid'}\">Grid</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'display':'inline-grid'}\">Inline grid</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-template-columns':'auto auto'}\">auto auto</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-template-columns':' 80px 200px auto'}\"> 80px 200px auto\n          </mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-template-rows':'40px 100px'}\">Template rows</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-column-gap':'25px'}\">column gap</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-row-gap':'25px'}\"> raw gap</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'grid-gap':'25px 50px'}\">Gap</mat-button-toggle>\n        </mat-button-toggle-group>\n      </div>\n      <div [ngStyle]=\"style\" class=\"grid-container\">\n        <div class=\"grid-item\">1</div>\n        <div class=\"grid-item\">2</div>\n        <div class=\"grid-item\">3</div>\n        <div class=\"grid-item\">4</div>\n        <div class=\"grid-item\">5</div>\n        <div class=\"grid-item\">6</div>\n        <div class=\"grid-item\">7</div>\n        <div class=\"grid-item\">8</div>\n        <div class=\"grid-item\">9</div>\n        <div class=\"grid-item\">10</div>\n      </div>\n    </div>\n    <div class=\"question\">\n      <div>\n        <p>\n          justify-content: space-evenly,space-around,space-between,center,start,end :- horizontal alignment\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"style2={'justify-content':''}\">Reset</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'start'}\">start</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'center'}\">center</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'end'}\">end</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'space-evenly'}\">space-evenly</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'space-between'}\">space-between</mat-button-toggle>\n          <mat-button-toggle (click)=\"style1={'justify-content':'space-around'}\">space-around</mat-button-toggle>\n        </mat-button-toggle-group>\n      </div>\n      <div [ngStyle]=\"style1\" class=\"grid-container\">\n        <div class=\"grid-item\">1</div>\n        <div class=\"grid-item\">2</div>\n        <div class=\"grid-item\">3</div>\n        <div class=\"grid-item\">4</div>\n        <div class=\"grid-item\">5</div>\n        <div class=\"grid-item\">6</div>\n        <div class=\"grid-item\">7</div>\n        <div class=\"grid-item\">8</div>\n        <div class=\"grid-item\">9</div>\n        <div class=\"grid-item\">10</div>\n      </div>\n    </div>\n    <div class=\"question\">\n      <div>\n        <h6>\n          align-content: space-evenly,space-around,space-between,center,start,end; :- vertical handle\n        </h6>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"style2={'align-content':''}\">Reset</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'start'}\">start</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'center'}\">center</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'end'}\">end</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'space-evenly'}\">space-evenly</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'space-between'}\">space-between</mat-button-toggle>\n          <mat-button-toggle (click)=\"style2={'align-content':'space-around'}\">space-around</mat-button-toggle>\n        </mat-button-toggle-group>\n      </div>\n      <div [ngStyle]=\"style2\" class=\"grid-container\">\n        <div class=\"grid-item\">1</div>\n        <div class=\"grid-item\">2</div>\n        <div class=\"grid-item\">3</div>\n        <div class=\"grid-item\">4</div>\n        <div class=\"grid-item\">5</div>\n        <div class=\"grid-item\">6</div>\n        <div class=\"grid-item\">7</div>\n        <div class=\"grid-item\">8</div>\n        <div class=\"grid-item\">9</div>\n        <div class=\"grid-item\">10</div>\n      </div>\n    </div>\n    <h2>\n      Grid -item\n    </h2>\n    <div class=\"question\">\n      <div>\n        <ul>\n          <li> grid-row-start: 1 grid-row-end :3 grid-column-start: 1 grid-column-end :3 same</li>\n          <li> grid-column: 1 / 5; start at 1 and end at 5</li>\n          <li> grid-column: 1 / span 3; start at 1 take 3 column</li>\n          <li> grid-row: 1 / 4;</li>\n          <li> grid-row: 1 / span 2;</li>\n          <li> grid-area: 1 / 2 / 5 / 6; row from 1-5 column 5-6</li>\n          <li> grid-area: 2 / 1 / span 2 / span 3;. row start 2 left 2 span column start at 1 left 3 span</li>\n        </ul>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"style3={'grid-row-start':'1'}\">grid-row-start</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-column':'1/5'}\">grid-column 1/5</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-column':'1 / span 3'}\">grid-column 1 / span 3</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-row':'1 / 4'}\">grid-row 1/4</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-row':'1 / span 2'}\">grid-row 1/span 2</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-area':'1/2/5/6'}\">grid-area 1</mat-button-toggle>\n          <mat-button-toggle (click)=\"style3={'grid-area':'2 / 1 / span 2 / span 3'}\">grid-area 2</mat-button-toggle>\n        </mat-button-toggle-group>\n      </div>\n      <div class=\"grid-container\">\n        <div [ngStyle]=\"style3\" class=\"grid-item\">1</div>\n        <div class=\"grid-item\">2</div>\n        <div class=\"grid-item\">3</div>\n        <div class=\"grid-item\">4</div>\n        <div class=\"grid-item\">5</div>\n        <div class=\"grid-item\">6</div>\n        <div class=\"grid-item\">7</div>\n        <div class=\"grid-item\">8</div>\n        <div class=\"grid-item\">9</div>\n        <div class=\"grid-item\">10</div>\n      </div>\n    </div>\n  </mat-tab>\n  <mat-tab label=\"Basic\">\n    <div>\n      <div class=\"box\">\n        <div class=\"box-item border\">\n          <div class=\"q_border border_y\">\n            <p> border : 1px solid yellow</p>\n          </div>\n        </div>\n        <div class=\"box-item border q_padding\">\n          100px\n          padding-top: 100px;\n          <div>Leave space inside div</div>\n        </div>\n        <div class=\"box-item border\">\n          100px\n          <div class=\"q_margin border_y\">\n            margin-top: 100px;\n            <div>Leave space form outside div</div>\n          </div>\n        </div>\n      </div>\n      <div class=\"box\">\n        <div class=\"box-item border\">\n          <div class=\"q_border border_y\">\n            <div class=\"code\">\n              box-sizing: border-box;\n            </div>\n            <div>margin padding take from its width</div>\n          </div>\n        </div>\n        <div class=\"box-item border q_padding\">\n          text-align: center;\n          <div>text-align: justify; justify,left right center gives space </div>\n        </div>\n        <div class=\"box-item border\">\n          <div>\n            display :block //start with new line takes width 100%\n          </div>\n          <div>\n            display :inline // inline with same line don't take height and width\n          </div>\n          <div>\n            display :inline-block // same line takes width and height\n          </div>\n        </div>\n      </div>\n      <div class=\"box\">\n        <div>\n          <h6>positions positioned using the top, bottom, left, and right</h6>\n          <div class=\"pos1\">\n            <p>1.Static :-Default</p>\n            <div class=\"p-box1\">\n              box1\n              <div class=\"p-box2\">\n                box 2\n              </div>\n            </div>\n          </div>\n          <div class=\"pos1\">\n            <p> 2. relative :- its moves from its original position</p>\n            <div class=\"p-box1\">\n              box1\n              <div class=\"p-box2 p-relative\">\n                box 2\n                <div> position: relative;</div>\n                <div> top: 80px;</div>\n                <div> left: 150px;</div>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"pos1\">\n            <p>3 fixed :-position remains fixed to the viewport</p>\n            <div class=\"p-box1\">\n              box1\n              <div> position: fixed;</div>\n              <div> bottom: 0px;</div>\n              <div> left: 0px;</div>\n              box2\n\n              <div class=\"p-box2 p-fixed\">\n                fixed\n              </div>\n            </div>\n          </div>\n          <div class=\"pos1\">\n            <p>absolute :-If parent is not positioned it get\n              relative to the body. its get relative to its parent. just like fixed get relative to view port\n            </p>\n            <div class=\"p-box1\">\n              box1\n              <div class=\"p-box2 p-absolute\">\n                box2\n                <div> position: absolute;</div>\n                <div> bottom: 100px</div>\n                <div> left: 100px </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"pos1\">\n            <p> 5. sticky :- get sticky like menu with scroll </p>\n            <div class=\"p-box1\" [ngStyle]=\"{'overflow':'scroll'}\" [style.height]=\"'300px'\">\n              box1\n              <!-- <div>\nSample text for scroll\n              </div> -->\n              <div>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,\n                nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec\n                congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis\n                sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue.\n                Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet\n                sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non\n                fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit. Lorem\n                ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi\n                lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec\n                congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis\n                sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue.\n                Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet\n                sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non\n                fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit. Lorem\n                ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi\n                lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec\n                congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis\n                sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue.\n                Nunc sagittis </div>\n              <div class=\"p-box2 p-sticky\">\n                box2\n                <div> position: sticky;</div>\n              </div>\n            </div>\n          </div>\n          <div class=\"p-sticky\"></div>\n        </div>\n      </div>\n    </div>\n  </mat-tab>\n  <mat-tab label=\"Flex\">\n    <div class=\"flex-container1\">\n      <h1>\n        Flex\n      </h1>\n      <p>\n        Flex : adjust automatically\n      </p>\n      <div class=\"flex\">\n        <div class=\"flex-item border\">Item1</div>\n        <div class=\"flex-item border\">Item2</div>\n        <div class=\"flex-item border\">Item3</div>\n        <div class=\"flex-item border\">Item4</div>\n      </div>\n      <div>\n        <p>\n          justify-content :flex-start :- Handle flex-items horizontally\n        </p>\n        <p>\n          flex-start, flex-end, center, space-between, space-around\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"justifyContent='flex-start'\">Flex Start</mat-button-toggle>\n          <mat-button-toggle (click)=\"justifyContent='flex-end'\">Flex end</mat-button-toggle>\n          <mat-button-toggle (click)=\"justifyContent='center'\">Center</mat-button-toggle>\n          <mat-button-toggle (click)=\"justifyContent='space-between'\">Space-between</mat-button-toggle>\n          <mat-button-toggle (click)=\"justifyContent='space-around'\">space-around</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div [style.justify-content]=\"justifyContent\" class=\"flex\">\n          <div class=\"flex-item border1\">Item1</div>\n          <div class=\"flex-item border1\">Item2</div>\n          <div class=\"flex-item border1\">Item3</div>\n          <div class=\"flex-item border1\">Item4</div>\n        </div>\n      </div>\n      <div class=\"question\">\n        <p>\n          align-items: flex-start || handel vertical\n        </p>\n        <p>\n          align-items: flex-start,flex-end,center,baseline,stretch : vertical\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"alignItem='flex-start'\">Flex Start</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignItem='flex-end'\">Flex end</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignItem='center'\">Center</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignItem='baseline'\">Baseline</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignItem='stretch'\">Stretch</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div [style.align-items]=\"alignItem\" class=\"flex-container\">\n          <div [ngStyle]=\"{'padding-top': '20px'}\" [style.height]=\"'100px'\" class=\"flex-item1 border1\">Item1</div>\n          <div [ngStyle]=\"{'padding-top': '10px'}\" [style.height]=\"'75px'\" class=\"flex-item1 border1\">Item2</div>\n          <div [ngStyle]=\"{'padding-top': '30px'}\" [style.height]=\"'120px'\" class=\"flex-item1 border1\">Item3</div>\n          <div [ngStyle]=\"{'padding-top': '5px'}\" class=\"flex-item1 border1\">Item4</div>\n        </div>\n      </div>\n      <div class=\"question\">\n        <p>\n          flex-wrap: wrap; less space content goes to next line\n        </p>\n        <p>\n          flex-wrap: wrap|| nowrap\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"wrap='wrap'\">Wrap</mat-button-toggle>\n          <mat-button-toggle (click)=\"wrap='nowrap'\">No wrap</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div [style.flex-wrap]=\"wrap\" class=\"flex-container\">\n          <div class=\"flex-item border1\">Item1</div>\n          <div class=\"flex-item border1\">Item2</div>\n          <div class=\"flex-item border1\">Item3</div>\n          <div class=\"flex-item border1\">Item4</div>\n          <div class=\"flex-item border1\">Item5</div>\n          <div class=\"flex-item border1\">Item6</div>\n        </div>\n      </div>\n      <div class=\"question\">\n        <p>\n          align-content: flex-start || align to baseline\n        </p>\n        <p>\n          align-content:stretch,flex-start,flex-end,center,space-between,space-around :\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"alignContent='flex-start'\">Flex Start</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignContent='flex-end'\">Flex end</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignContent='center'\">Center</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignContent='space-between'\">Space between</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignContent='space-around'\">Space around</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div [ngStyle]=\"{'align-content':alignContent,'flex-wrap':'wrap'}\" class=\"flex-container\">\n          <div class=\"flex-item border1\">Item1</div>\n          <div class=\"flex-item border1\">Item2</div>\n          <div class=\"flex-item border1\">Item3</div>\n          <div class=\"flex-item border1\">Item4</div>\n          <div class=\"flex-item border1\">Item5</div>\n          <div class=\"flex-item border1\">Item6</div>\n        </div>\n\n        <h2>Flex -item</h2>\n        <div class=\"question\">\n          <p>\n            order : 3 \\\\ change the position of child\n          </p>\n          <p>\n            margin-left :auto \\\\ it will push all item to left\n          </p>\n          <p>\n            margin: auto; \\\\to takes item in center\n          </p>\n          <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n            <mat-button-toggle (click)=\"style={'order':'3'}\">Order</mat-button-toggle>\n            <mat-button-toggle (click)=\"style={'margin-left':'auto'}\">Margin left</mat-button-toggle>\n            <mat-button-toggle (click)=\"style={'margin':'auto'}\">margin auto</mat-button-toggle>\n          </mat-button-toggle-group>\n          <p>Example with 1 div</p>\n          <div class=\"flex\">\n            <div [ngStyle]=\"style\" class=\"flex-item border1\">Item1</div>\n          </div>\n          <p>Example with 3 div</p>\n          <div class=\"flex\">\n            <div [ngStyle]=\"style\" class=\"flex-item border1\">Item1</div>\n            <div [ngStyle]=\"style\" [style]=\"style.order\" class=\"flex-item border1\">Item2</div>\n            <div [ngStyle]=\"style\" class=\"flex-item border1\">Item3</div>\n          </div>\n        </div>\n      </div>\n      <div class=\"question\">\n        <p>\n          align-self :- flex-start \\\\ child override the align-item\n        </p>\n        <p>\n          flex-start,flex-end,center,baseline,stretch\n        </p>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"alignSelf='flex-start'\">Flex Start</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignSelf='flex-end'\">Flex end</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignSelf='center'\">Center</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignSelf='baseline'\">Baseline</mat-button-toggle>\n          <mat-button-toggle (click)=\"alignSelf='stretch'\">Stretch</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div class=\"flex-container\">\n          <div [style.align-self]=\"alignSelf\" [style.height]=\"'100px'\" class=\"flex-item1 border1\">Item1</div>\n          <div [ngStyle]=\"{'padding-top': '20px'}\" [style.align-self]=\"alignSelf\" [style.height]=\"'75px'\"\n            class=\"flex-item1 border1\">Item2</div>\n          <div [ngStyle]=\"{'padding-top': '10px'}\" [style.align-self]=\"alignSelf\" [style.height]=\"'120px'\"\n            class=\"flex-item1 border1\">Item3</div>\n          <div [ngStyle]=\"{'padding-top': '30px'}\" class=\"flex-item border1\">Don;t have any align </div>\n          <div [ngStyle]=\"{'padding-top': '5px'}\" [style.align-self]=\"alignSelf\" class=\"flex-item1 border1\">Item4</div>\n        </div>\n      </div>\n      <div class=\"question\">\n        <ul>\n          <li> flex:2 :number of places it will take its take all the space</li>\n          <li> flex-basis:100px for width</li>\n          <li> flex-shrink:3 decrease size flex-grow:3 increase size</li>\n        </ul>\n        <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n          <mat-button-toggle (click)=\"style={'flex':'2'}\">Flex 2</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'flex-basis':'100px'}\">Flex basis</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'flex-shrink':'3'}\">Flex-shrink</mat-button-toggle>\n          <mat-button-toggle (click)=\"style={'flex-grow':'3'}\">Flex-grow</mat-button-toggle>\n        </mat-button-toggle-group>\n        <div class=\"flex\">\n          <div [ngStyle]=\"{'flex':style.flex}\" class=\"flex-item border1\">Flex 2</div>\n          <div [ngStyle]=\"{'flex-basis':style['flex-basis']}\" class=\"flex-item border1\">Flex basic</div>\n          <div [ngStyle]=\"{'flex-shrink':style['flex-shrink']}\" class=\"flex-item border1\">Flex-shrink</div>\n          <div [ngStyle]=\"{'flex-grow':style['flex-grow']}\" class=\"flex-item border1\">Flex-grow</div>\n          <div *ngIf=\"style['flex-shrink']\" class=\"flex-item border1\">Extra to check flex shrink</div>\n          <div *ngIf=\"style['flex-shrink']\" class=\"flex-item border1\">flex shrink It will shrink first</div>\n        </div>\n      </div>\n    </div>\n  </mat-tab>\n\n\n</mat-tab-group>"
 
 /***/ }),
 
-/***/ "./src/app/chilld/chilld.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/chilld/chilld.component.ts ***!
-  \********************************************/
-/*! exports provided: ChilldComponent */
+/***/ "./src/app/css/css.component.ts":
+/*!**************************************!*\
+  !*** ./src/app/css/css.component.ts ***!
+  \**************************************/
+/*! exports provided: CssComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChilldComponent", function() { return ChilldComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CssComponent", function() { return CssComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-var ChilldComponent = /** @class */ (function () {
-    function ChilldComponent() {
+var CssComponent = /** @class */ (function () {
+    function CssComponent() {
+        this.justifyContent = 'flex-start';
+        this.alignItem = 'flex-start';
+        this.alignSelf = 'flex-start';
+        this.alignContent = 'flex-start';
+        this.wrap = 'wrap';
+        this.style = '';
+        this.style1 = '';
+        this.style2 = '';
+        this.style3 = '';
     }
-    ChilldComponent.prototype.ngOnInit = function () {
-        console.log('init called child', this.name);
+    CssComponent.prototype.ngOnInit = function () {
     };
-    ChilldComponent.prototype.ngOnChanges = function () {
-        console.log('ngOnChanges called child', this.name);
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], ChilldComponent.prototype, "name", void 0);
-    ChilldComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    CssComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-chilld',
-            template: __webpack_require__(/*! ./chilld.component.html */ "./src/app/chilld/chilld.component.html"),
-            styles: [__webpack_require__(/*! ./chilld.component.css */ "./src/app/chilld/chilld.component.css")]
+            selector: 'app-css',
+            template: __webpack_require__(/*! ./css.component.html */ "./src/app/css/css.component.html"),
+            styles: [__webpack_require__(/*! ./css.component.css */ "./src/app/css/css.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], ChilldComponent);
-    return ChilldComponent;
+    ], CssComponent);
+    return CssComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/date/date.component.css":
+/***/ "./src/app/data-structure/data-structure.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/data-structure/data-structure.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "app-data-structure{\r\n    width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGF0YS1zdHJ1Y3R1cmUvZGF0YS1zdHJ1Y3R1cmUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7QUFDZiIsImZpbGUiOiJzcmMvYXBwL2RhdGEtc3RydWN0dXJlL2RhdGEtc3RydWN0dXJlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhcHAtZGF0YS1zdHJ1Y3R1cmV7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/data-structure/data-structure.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/data-structure/data-structure.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-tab-group mat-align-tabs=\"center\" animationDuration=\"0ms\">\n  <mat-tab label=\"Sort\">\n    <app-sort></app-sort>\n  </mat-tab>\n  <mat-tab label=\"List\">\n    <app-list></app-list>\n  </mat-tab>\n  <mat-tab label=\"BST\">\n    <app-bst></app-bst>\n  </mat-tab>\n  <mat-tab label=\"Hashing\">\n    <app-hashing></app-hashing>\n  </mat-tab>\n\n</mat-tab-group>\n"
+
+/***/ }),
+
+/***/ "./src/app/data-structure/data-structure.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/data-structure/data-structure.component.ts ***!
+  \************************************************************/
+/*! exports provided: DataStructureComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataStructureComponent", function() { return DataStructureComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DataStructureComponent = /** @class */ (function () {
+    function DataStructureComponent() {
+    }
+    DataStructureComponent.prototype.ngOnInit = function () {
+    };
+    DataStructureComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-data-structure',
+            template: __webpack_require__(/*! ./data-structure.component.html */ "./src/app/data-structure/data-structure.component.html"),
+            styles: [__webpack_require__(/*! ./data-structure.component.css */ "./src/app/data-structure/data-structure.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], DataStructureComponent);
+    return DataStructureComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/data/data.component.css":
 /*!*****************************************!*\
-  !*** ./src/app/date/date.component.css ***!
+  !*** ./src/app/data/data.component.css ***!
   \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RhdGUvZGF0ZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RhdGEvZGF0YS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
-/***/ "./src/app/date/date.component.html":
+/***/ "./src/app/data/data.component.html":
 /*!******************************************!*\
-  !*** ./src/app/date/date.component.html ***!
+  !*** ./src/app/data/data.component.html ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  date works!\n</p>\n<label>\n  Date Time:\n  <owl-date-time [(ngModel)]=\"startDateTime\" (onFocus)=\"setStartDate();\" [min]=\"currentDate\" [locale]=\"en\"\n  placeHolder=\"Select End Time\" dateFormat=\"M/D/YYYY hh:mm A\"></owl-date-time>\n\n</label>"
+module.exports = "<mat-accordion>\n    <mat-expansion-panel *ngFor=\"let data1 of data; let i =index\">\n        <mat-expansion-panel-header>\n            <mat-panel-title>\n                <h6>\n                    {{i+1}} {{data1.question}}\n\n                </h6>\n            </mat-panel-title>\n        </mat-expansion-panel-header>\n        <div class=\"text_background\">\n            <div *ngFor=\"let response of data1.responses\">\n                <div class=\"question_value\">\n                    <p> {{response.value}}</p>\n                </div>\n                <div ngClass=\"mt5\" *ngIf=\"response.image\" class=\"code_snippet\">\n                     <mat-divider></mat-divider>\n                    <img [src]=\"imageBaseUrl + response.image\">\n                     <mat-divider></mat-divider>\n\n                </div>\n                <div class=\"question_description\">\n                    <div *ngFor=\"let val of response.desc\">\n                        <p> {{val}}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </mat-expansion-panel>\n</mat-accordion>"
 
 /***/ }),
 
-/***/ "./src/app/date/date.component.ts":
+/***/ "./src/app/data/data.component.ts":
 /*!****************************************!*\
-  !*** ./src/app/date/date.component.ts ***!
+  !*** ./src/app/data/data.component.ts ***!
   \****************************************/
-/*! exports provided: DateComponent */
+/*! exports provided: DataComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateComponent", function() { return DateComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataComponent", function() { return DataComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
-var DateComponent = /** @class */ (function () {
-    function DateComponent() {
-        this.startDateTime = null;
+var DataComponent = /** @class */ (function () {
+    function DataComponent() {
+        this.imageBaseUrl = '';
     }
-    ;
-    DateComponent.prototype.ngOnInit = function () {
-        this.currentDate = new Date();
-    };
-    DateComponent.prototype.setStartDate = function () {
-        this.startDateTime = new Date().toISOString();
-    };
-    DateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-date',
-            template: __webpack_require__(/*! ./date.component.html */ "./src/app/date/date.component.html"),
-            styles: [__webpack_require__(/*! ./date.component.css */ "./src/app/date/date.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], DateComponent);
-    return DateComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/details.component.html":
-/*!****************************************!*\
-  !*** ./src/app/details.component.html ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <h1> Child Component</h1>\r\n    <div class=\"row\">Parent Click {{parrentData?.name}}</div>\r\n    <div class=\"row\">\r\n        Parent  Data -\r\n        <p> {{getGetFromController()}}</p>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <p [ngClass]=\"'row'\">class</p>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        INHERITANCE DATA -\r\n        <p>{{hero.name}}</p>\r\n    </div>\r\n    <h1>  Child Component Ends</h1>\r\n</div>\r\n\r\n\r\n<button *ngIf=\"show\" (click)=\"action()\">Action </button>"
-
-/***/ }),
-
-/***/ "./src/app/details.component.ts":
-/*!**************************************!*\
-  !*** ./src/app/details.component.ts ***!
-  \**************************************/
-/*! exports provided: DetailsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailsComponent", function() { return DetailsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.component */ "./src/app/base.component.ts");
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
-
-
-
-
-var DetailsComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](DetailsComponent, _super);
-    function DetailsComponent(ser, router) {
-        var _this = _super.call(this) || this;
-        _this.ser = ser;
-        _this.router = router;
-        _this.index = 1;
-        _this.show = true;
-        console.log(_this.index++, ' constructor called');
-        _this.id = 1;
-        console.log('this.ser.abhi =', _this.ser.abhi);
-        _this.ser.abhi = "abhi chnge";
-        console.log('this.ser.abhi =', _this.ser.abhi);
-        _this.getHero();
-        console.log('hero data from inhertance : ', _this.hero);
-        return _this;
-    }
-    //get called when input changes
-    DetailsComponent.prototype.ngOnChanges = function (change) {
-        console.log(this.index++, ' ngOnChanges detail');
-    };
-    DetailsComponent.prototype.ngOnInit = function () {
-        console.log(this.index++, " ngOnInit called");
-        _super.prototype.ngOnInit.call(this);
-        this.componentLoadComplete();
-    };
-    // ngOnDestroy(){
-    //     console.log(this.index++ ,"  ngOnDestroy called");
-    // }
-    DetailsComponent.prototype.ngDoCheck = function () {
-        this.componentLoadComplete();
-        console.log(this.index++, "ngDoCheck() called");
-    };
-    DetailsComponent.prototype.ngAfterContentInit = function () {
-        console.log(this.index++, "ngAfterContentInit called");
-    };
-    DetailsComponent.prototype.getGetFromController = function () {
-        return this.index;
-    };
-    DetailsComponent.prototype.updateData = function () {
-        console.log("update data is called");
-    };
-    DetailsComponent.prototype.action = function () {
-        var a = new Date();
-        console.log("action started ");
-        var obj = [];
-        var b = {};
-        for (var i = 0; i <= 200; i++) {
-            for (var j = 0; j <= 200; j++) {
-                for (var k_1 = 0; k_1 <= 100; k_1++) {
-                    b = {
-                        name: 'abhishek ' + i + '/ ' + j,
-                        lastName: 'abhishek ' + i + '/ ' + j
-                    };
-                }
-            }
-            obj.push();
-        }
-        var k = new Date();
-        console.log("action end ");
-        console.log('time start', a);
-        console.log('time end', k);
-        this.show = false;
-        window.location.reload();
-    };
-    DetailsComponent.prototype.componentLoadComplete = function () {
-        for (var i = 0; i <= 2000; i++) {
-            for (var j = 0; j <= 2000; j++) {
-            }
-        }
-        this.ser.emitData("p1", this.parrentData.name);
-        console.log("component loaded successfully");
+    DataComponent.prototype.ngOnInit = function () {
+        console.log(22222222, this.imageBaseUrl);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], DetailsComponent.prototype, "parrentData", void 0);
-    DetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    ], DataComponent.prototype, "imageBaseUrl", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], DataComponent.prototype, "data", void 0);
+    DataComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'detail',
-            template: __webpack_require__(/*! ./details.component.html */ "./src/app/details.component.html")
+            selector: 'app-data',
+            template: __webpack_require__(/*! ./data.component.html */ "./src/app/data/data.component.html"),
+            styles: [__webpack_require__(/*! ./data.component.css */ "./src/app/data/data.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_service__WEBPACK_IMPORTED_MODULE_3__["HeroService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
-    ], DetailsComponent);
-    return DetailsComponent;
-}(_base_component__WEBPACK_IMPORTED_MODULE_2__["BaseComponent"]));
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], DataComponent);
+    return DataComponent;
+}());
 
 
 
 /***/ }),
 
-/***/ "./src/app/first/first.component.css":
-/*!*******************************************!*\
-  !*** ./src/app/first/first.component.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZpcnN0L2ZpcnN0LmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/first/first.component.html":
-/*!********************************************!*\
-  !*** ./src/app/first/first.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h2>First Component</h2>\n\n<nav>\n  <ul>\n    <li><a routerLink=\"child-a\">Child A</a></li>\n    <li><a routerLink=\"child-b\">Child B</a></li>\n  </ul>\n</nav>\n\n<router-outlet></router-outlet>"
-
-/***/ }),
-
-/***/ "./src/app/first/first.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/first/first.component.ts ***!
-  \******************************************/
-/*! exports provided: FirstComponent */
+/***/ "./src/app/files/angular.ts":
+/*!**********************************!*\
+  !*** ./src/app/files/angular.ts ***!
+  \**********************************/
+/*! exports provided: data */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirstComponent", function() { return FirstComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+var data = {
+    "angular": [{
+            "question": "Angular Command",
+            "responses": [{
+                    "value": "npm install -g @angular/cli@latest",
+                },
+                {
+                    "value": "ng generate directive highlight",
+                },
+                {
+                    "value": "ng serve",
+                },
+                {
+                    "value": "ng generate service heroes/hero",
+                },
+                {
+                    "value": "ng generate pipe safe",
+                },
+                {
+                    "value": "ng generate component xyz CREATE",
+                    "desc": [
+                        "CREATE src/app/xyz/xyz.component.html (18 bytes)",
+                        "CREATE src/app/xyz/xyz.component.spec.ts (607 bytes)",
+                        "CREATE src/app/xyz/xyz.component.ts (263 bytes)",
+                        "CREATE src/app/xyz/xyz.component.css (0 bytes)",
+                        "UPDATE src/app/app.module.ts (535 bytes)"
+                    ],
+                },
+            ]
+        },
+        {
+            "question": "Selector",
+            "responses": [{
+                    "value": "'app-server' or selector: '[app-server]' or selector: '.app-server'",
+                },
+                {
+                    "value": '<app-server></app-server> or <div app-server></div> or <div    class="app-server"></div>',
+                }
+            ]
+        },
+        {
+            "question": "Angular.json",
+            "responses": [{
+                    "value": "Angular use angular.json file to build the code.",
+                },
+                {
+                    "value": "Angular contain entry point for our application like index.html and style files, CLIBuilder command",
+                },
+                {
+                    "value": " Required script get added at our index.html page(main.ts, polyfills.js)",
+                },
+                {
+                    "value": "main.ts create the browser environment to run our application \\ platformBrowserDynamic().bootstrapModule(AppModule)\
+            ",
+                },
+                {
+                    "type": "text",
+                    "value": 'AppModule contain all the component and bootstrap the main component',
+                    "desc": ["{", "declarations: [AppComponent, AngularBasicComponent,MyPipePipe] --  Contain component and pipes ",
+                        "Providers:[services] --add services get injected",
+                        "Import:[FormsModule,browserModule,MatTabsModule] --Import FormsModule to use ngModel in AppModule",
+                        "bootstrap:AppComponent",
+                        "}"
+                    ]
+                }
+            ]
+        },
+        {
+            "question": "polyfill",
+            "responses": [{
+                    "value": "a browser fallback, made in JavaScript, that allows functionality you expect to work in modern browsers to work in older browsers, e.g., to support canvas (an HTML5 feature) in older browsers.",
+                },
+            ]
+        },
+        {
+            "question": "Components",
+            "responses": [{
+                    "value": "Building block of Angular applications. Can be reused"
+                },
+                {
+                    "value": "Components lifecycle events :- You can respond to events in the lifecycle of a component or directive",
+                },
+                {
+                    value: '@Component({',
+                    desc: [
+                        '      selector: "app - tet",',
+                        '      templateUrl: :./tet.component.html,',
+                        '      styleUrls: ["./ tet.component.css"],',
+                        '      changeDetection: ChangeDetectionStrategy.OnPush,',
+                        '      encapsulation: ViewEncapsulation.ShadowDom,',
+                        '      providers: [{provide: HeroService, useValue: {name: "abhishek tet1"}}],',
+                        '      animations: []',
+                        '     })',
+                    ]
+                },
+                {
+                    "value": "ngOnChanges :- Called before ngOnInit(), called on data-bound input properties change.",
+                    "desc": [
+                        "Note that this happens very frequently so any operation you perform here impacts performance significantly",
+                        "if your component has no inputs or you use it without providing any inputs, the framework will not call ngOnChanges()"
+                    ]
+                },
+                {
+                    "value": "ngOnInit  :- Called once, after the first ngOnChanges()",
+                },
+                {
+                    "value": "ngDoCheck :-use for custom detect changes. Detect and act upon changes that Angular can't or won't detect on its own. Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run",
+                },
+                {
+                    "value": "ngAfterContentInit :-Called once after the first ngDoCheck().",
+                },
+                {
+                    "value": "ngAfterContentChecked :- Called after ngAfterContentInit() and every subsequent ngDoCheck().",
+                },
+                {
+                    "value": "ngAfterViewInit :- Called once after the first ngAfterContentChecked()",
+                },
+                {
+                    "value": "ngAfterViewChecked :- Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked",
+                },
+                {
+                    "value": "ngOnDestroy :- Called immediately before Angular destroys the directive or component",
+                },
+            ]
+        },
+        {
+            "question": "Component Interaction",
+            "responses": [{
+                    "value": "Child to parent ------Input & Output",
+                    "image": "./parent2child1.png",
+                },
+                {
+                    "image": "./parent2child2.png",
+                },
+                {
+                    "value": "Parent to child -- Local variable",
+                    "desc": [
+                        'Parent access child by creating a template reference variable for the child element  #timer',
+                    ]
+                },
+                {
+                    "image": "./parent2child3.png",
+                },
+                {
+                    "image": "./parent2child4.png",
+                },
+                {
+                    "value": "@ViewChild() -- Inject the child component into the parent as a ViewChild.",
+                    "image": "./parent2child5.png"
+                },
+                {
+                    "image": "./parent2child6.png"
+                },
+                {
+                    "value": "Parent and children communicate via a service"
+                },
+                {
+                    "value": "Event EventEmitter"
+                }
+            ]
+        },
+        {
+            "question": " Dynamic component loader",
+            "responses": [{
+                    "value": "ComponentFactoryResolver to add components dynamically. At runtime",
+                    "desc": [
+                        'The anchor directive  :- Define anchor point to tell Angular where to insert components',
+                        ' <ng-template adHost></ng-template>'
+                    ]
+                }]
+        },
+        {
+            "question": "Angular elements",
+            "responses": [{
+                    "value": " Angular elements are Angular components packaged as custom elements (Web Components) create new custom tag which work with any framework and lib. less code of angular",
+                }]
+        },
+        {
+            "question": "Template",
+            "responses": [{
+                    "value": "a template is a chunk of HTML. Within a template, you can use special syntax to leverage many of Angular's features.",
+                }]
+        },
+        {
+            "question": "Interpolation",
+            "responses": [{
+                    "value": "It get changed {{...}} <h3>Current customer: {{ currentCustomer }}</h3>",
+                }]
+        },
+        {
+            "question": "Pipes",
+            "responses": [{
+                    "value": "Transforming Data Using Pipes",
+                    "desc": ["{{ birthday | date | uppercase}}", "{{name|localization}}",
+                        "It can be pure or not",
+                        "pure:false it wil run on every change detection",
+                        "pure :false, slow the app",
+                        "Pure it will run only if its value changed this is benefits over service"
+                    ]
+                }]
+        },
+        {
+            "question": "Data binding // Template syntax ",
+            "responses": [{
+                    "desc": [
+                        "Interpolation   - {{name}}",
+                        "Property binding  -<input [value]='firstName'> ",
+                        "Event binding     -  <button (click)='readRainbow($event)'>",
+                        "Attribute binding  - <div [attr.role]='myAriaRole'> ",
+                        "Class binding    -   <div [class.extra-sparkle]='isDelightful'> ",
+                        "Style binding    -  <div [style.width.px]='mySize'>	",
+                        "Two-way data binding with ngModel	 	<my-cmp [(title)]='name'>",
+                        "<p>Card No.: {{cardNumber | myCardNumberFormatter}}</p> : pipe",
+                        "<p>Employer: {{employer?.companyName}}</p> check null",
+                    ]
+                }]
+        },
+        {
+            "question": "HTML attribute and the DOM property",
+            "responses": [{
+                    "value": "HTML attribute and the DOM property are different things, even when they have the same name. (attr/property :- id,property:textContent,attr:area*)",
+                    "desc": ['define attributes on your HTML elements. browser parse and convert it into object node and object  property',
+                        'In Angular, the only role of HTML attributes is to initialize element and directive state',
+                        'Template binding works with properties and events, not attributes.',
+                        'Attributes initialize DOM properties and then they are done. Property values can change; attribute values cant.',
+                        '<input [attr.disabled]="condition ? "disabled" : null">',
+                        'There is one exception to this rule. Attributes can be changed by setAttribute(), which re-initializes corresponding DOM properties',
+                    ]
+                }]
+        },
+        {
+            "question": "Binding Property",
+            "responses": [{
+                    "value": '<img [src]="heroImageUrl"> ||<app-hero-detail [hero]="currentHero"></app-hero-detail> || <div [ngClass]="{special: isSpecial}"></div>',
+                    "desc": [
+                        'Event binding',
+                        '<button (click)="onSave()">Save</button>',
+                        '<app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>',
+                        '<div (myClick)="clicked=12" clickable>click me</div>',
+                    ]
+                },
+                { value: 'Two-way :- <input [(ngModel)]="name">' },
+                { value: 'Attribute  :- <button [attr.aria-label]="help">help</button>' },
+                { value: 'Class :- <div [class.special]="isSpecial">Special</div>' },
+                { value: ' Style <button [style.color]="isSpecial ? "red" : "green">' },
+                { value: ' [style]="styleExpression"' }
+            ]
+        },
+        {
+            "question": "Template expression operators",
+            "responses": [{
+                    "desc": [
+                        '<p>Item json pipe: {{item | json}}</p>',
+                        ' <p>The item name is: {{item?.name}}</p>   ',
+                        ' Sometimes a binding expression triggers a type error during AOT compilation ',
+                        ' <p>The items undeclared best by date is: {{$any(item).bestByDate}}</p>',
+                    ]
+                }]
+        },
+        {
+            "question": "Directives",
+            "responses": [{
+                    "value": "Building block of Angular applications. Can be reused",
+                    "desc": [
+                        '  attribute directives :- change the appearance or behavior of an element, component or another directive.',
+                        "e.g [ngClass] and [ngStyle], [NgModel]",
+                        '  structural directives. -- change the DOM layout by adding and removing DOM elements.. ',
+                        'ngFor ,ngIf,NgSwitch =>* means going to change dom',
+                        '  Components directives --directives with a template',
+                    ]
+                }]
+        },
+        {
+            "question": "Custom directive",
+            "responses": [{
+                    "value": "it is like component don't have template .we can change style by using ElementRef add event using HostListener.",
+                    "desc": ["we can also create custom structural directive "]
+                }]
+        },
+        {
+            "question": "Injector",
+            "responses": [{
+                    "value": "An object in the Angular dependency-injection system. can find a named dependency in its cache or create a dependency using a configured provider",
+                    "desc": ["An injector provides a singleton instance of a dependency, and can inject this same instance in multiple components.",
+                        "hierarchy of injectors at the NgModule and component level",
+                        "You can configure injectors with different providers that can provide different implementations of the same dependency e.g useClass,useValue,useExisting"
+                    ]
+                }]
+        },
+        {
+            "question": "Injectable",
+            "responses": [{
+                    "value": "Service get inserted at root or at module level",
+                    "desc": [" @Injectable({providedIn: root,}) :- service get injected at root level",
+                        "@NgModule({providers: [UserService]}) :- service get injected at module level",
+                        "providedIn in better that providers array.",
+                    ]
+                }]
+        },
+        {
+            "question": "Tree-shaking and @Injectable()",
+            "responses": [{
+                    "value": "providedIn property is preferable to the @NgModule()",
+                    "desc": ["providedIn in better that providers array.", "if service is not used in any component then it wont be added in our bundle :- Called Tree shaking",
+                        "Tree-shaking :- While optimization in bundle don't add injectable services that is not used",
+                        "@Injectable({",
+                        "providedIn: UserModule",
+                        "})",
+                        "@NgModule({",
+                        "providers: [UserService],",
+                        "})",
+                    ]
+                }]
+        },
+        {
+            "question": "Dependency injection",
+            "responses": [{
+                    "value": "Single instance in the entire app, unless you configure another provider with a child injector",
+                    "desc": ["@Injectable() creating service instances and inject the service in component", "Class asks for dependencies from external sources rather than creating them itself",
+                        "DI framework provides declared dependencies to a class when that class is instantiated",
+                        "supply data to a component from an injectable service class"
+                    ]
+                },
+                {
+                    value: "Configure service to provider",
+                    desc: [
+                        "In the @Injectable() decorator for the service itself.",
+                        "In the @NgModule() decorator for an NgModule.",
+                        "In the @Component() decorator for a component.",
+                    ]
+                },
+                {
+                    "value": "Multiple service instances (sandboxing)",
+                    "desc": ["Provide services at component level"]
+                }
+            ]
+        },
+        {
+            "question": "Providers",
+            "responses": [{
+                    "value": "configuring providers, you can make services available to the parts of your application that need them",
+                    "desc": [
+                        "default behavior is for the injector to instantiate that class with new",
+                        "{ provide: HeroService, useClass:Service1Service } :- give instance of Service1Service. if Service1Service its not already provided it will work",
+                        "{ provide: HeroService, useExisting:Service1Service } :- uses existing service.Service1Service already should be provide ,instance should be there ",
+                        "{ provide: HeroService, useValue:{name:'abhishek yadav' } :- pass value to it"
+                    ]
+                },
+                {
+                    value: "Non-class dependencies :-want to add object without any type"
+                },
+                {
+                    value: "1. String token :- used for non class dependency",
+                    desc: [
+                        " { provide: 'CONFIG', useValue: {name:'abhishek' }",
+                        "constructor(@Inject('CONFIG') public Config: any) {}",
+                        "As its uses string instead of type it is prone to error. can be overridden by other developer or other lib"
+                    ]
+                },
+                {
+                    value: "2. Injection Token :- used for non class dependency",
+                    desc: [
+                        "export const APP_CONFIG = new InjectionToken<any>('');",
+                        "{ provide: APP_CONFIG, useValue: {name:'abhishek' }",
+                        "constructor(@Inject(APP_CONFIG) public Config: any) {}",
+                    ]
+                },
+                {
+                    value: "Factory providers :-To create a changeable, dependent value based on information unavailable before run time, you can use a factory provider",
+                    desc: [
+                        "export let heroServiceProvider =",
+                        "{",
+                        "provide: HeroService,",
+                        "     useFactory: heroServiceFactory,",
+                        "     deps: [Logger, UserService]//pass these 2 heroServiceFactory based on its value instances             get set",
+                        "};	",
+                        " const heroServiceFactory = (logger: Logger, userService: UserService) => {",
+                        " return new HeroService(logger, userService.user.isAuthorized);",
+                        "};",
+                    ]
+                }
+            ]
+        },
+        {
+            "question": "@Self @SkipSelf @Host @Optional",
+            "responses": [{
+                    "value": "constructor( @Optional() @Host private heroService: HeroService){}",
+                    "desc": ["@Self :- the injector only looks at the component's injector for its providers",
+                        "@SkipSelf : - skip the local injector and look up in the hierarchy ",
+                        " @Optional() // ok if the logger doesn't exist",
+                        " @Host()     // it will in self and its parent",
+                        "e.g :-Directive we have used in component the directive look in it self and it parent component",
+                        " <ng-content></ng-content>:- in this child can access to till its parent"
+                    ]
+                }]
+        },
+        {
+            "question": "To break circular dependencies ",
+            "responses": [{
+                    "value": "providers: [{ provide: Parent, useExisting: forwardRef(() => AlexComponent) }],",
+                    "desc": ["forwardRef() Allows to refer to references which are not yet defined."]
+                }]
+        },
+        {
+            "question": "Routing",
+            "responses": [{
+                    "value": "Bases on path component get loaded",
+                    "desc": [
+                        "      create app.routing module add in app.module  ",
+                        "      add path in routes array"
+                    ]
+                },
+                {
+                    image: "routes1.png"
+                },
+                {
+                    value: "Nested route add route-outlet and matching url get loaded"
+                }]
+        },
+        {
+            "question": "Read param from url ",
+            "responses": [{
+                    "value": "constructor(private route: ActivatedRoute) {}",
+                    "desc": [
+                        "  this.route.queryParams.subscribe(params => {",
+                        "      this.name = params['name'];",
+                        "      });",
+                    ]
+                }, {
+                    value: "this.router.navigate(['/heroes', { id: heroId }])"
+                },
+                {
+                    value: 'PathLocationStrategy—the default "HTML5 pushState" style.'
+                },
+                {
+                    value: 'HashLocationStrategy—the "hash URL" style.'
+                }
+            ]
+        },
+        {
+            "question": "Interceptors  ",
+            "responses": [{
+                    "value": "inspect and transform HTTP requests from your application to a server.",
+                    "desc": ["caching,adding header,logging"]
+                }]
+        },
+        {
+            "question": "Internationalization",
+            "responses": [{
+                    "value": "Localizing your app :- dates, times, numbers, and currencies ",
+                }]
+        },
+        {
+            "question": "Schematic",
+            "responses": [{
+                    "value": "create code like angular cli command",
+                    "desc": ["schematic is a template-based code generator that supports complex logic"]
+                }]
+        },
+        {
+            "question": "service worker and PWA progressive web app",
+            "responses": [{
+                    "value": "manage caching of application",
+                    "desc": [
+                        "cache application like installing native application",
+                        "update happened in background",
+                        "it download manifest from server :which file to cache. inform new version available downloaded and cached",
+                    ]
+                }]
+        },
+        {
+            "question": "Getter",
+            "responses": [{
+                    "value": "getter :-  get fullName(){} :-html {{ fullName }}",
+                }]
+        },
+        {
+            "question": "Change detection",
+            "responses": [{
+                    "value": "Synch UI with state of data",
+                    "desc": [
+                        "When it runs save current state as previous state for next time running",
+                        "Event(click) changes state it trigger change detection",
+                        "Event, Promises and setTimeout, setInterval trigger change detection"
+                    ]
+                }]
+        },
+        {
+            "question": "Calling method directly form view",
+            "responses": [{
+                    "value": "If you use functional inside expressions it will get called on every change detection  {{getFullName()}}",
+                    "desc": ["getFullName will get called on every time change detection run. Not good",
+                        "Change detection get called in component even event ocurred at outside of this component",
+                    ]
+                }, {
+                    value: "Solution",
+                    desc: [
+                        "1. changeDetection: ChangeDetectionStrategy.OnPush :-  change detection work only in this component if event occur in it or if its input changes",
+                        "2. Use pure pipe :- during change detection pure pipe get called only when its input changes"
+                    ]
+                }]
+        },
+        {
+            "question": "Track by",
+            "responses": [{
+                    "value": "ngFor if we change the array it will re-render the view again. track by only changed element get re-render",
+                    "desc": ["When we have more record like 1k then it is useful"]
+                }]
+        },
+        {
+            "question": "Content projection",
+            "responses": [{
+                    "value": "<ng-content></ng-content> :- <home>it will get inserted in home template where we right <ng-content></ng-content> </home>",
+                }]
+        },
+        {
+            "question": "ViewProviders and providers",
+            "responses": [{
+                    "value": "view provider its service get access in view but not in <ng-content>",
+                    "desc": [
+                        " @Component({",
+                        "    providers: [UserService]",
+                        "  })",
+                        "  @Component({",
+                        "      viewProviders: [UserService]",
+                        "    })",
+                    ]
+                }]
+        },
+        {
+            "question": "View encapsulation",
+            "responses": [{
+                    "value": "CSS styles are encapsulated into the component's view and don't affect the rest of the application",
+                },
+                {
+                    value: "encapsulation: ViewEncapsulation.ShadowDom",
+                    desc: ["encapsulate css. its style remain separate from rest of the dom. its children will get its style"]
+                },
+                {
+                    value: "encapsulation: ViewEncapsulation.none",
+                    desc: ["style goes to global level",
+                        "If same style in parent and child last style get applied as last loaded to the UI"
+                    ]
+                },
+                {
+                    value: "encapsulation: ViewEncapsulation.Emulated",
+                    desc: ["By default :-its children will not get its styling. it add host to id and its content"]
+                }
+            ]
+        },
+        {
+            "question": "Shadow DOM",
+            "responses": [{
+                    "value": "Style and behavior hidden from other component .like video tag",
+                }]
+        },
+        {
+            "question": "Form",
+            "responses": [{
+                    "value": "1. Reactive forms",
+                    "desc": ["more scalable, reusable, and testable .model get handle explicitly"]
+                },
+                {
+                    image: "form1.png",
+                },
+                {
+                    value: "profileForm.value to get",
+                    desc: ["this.profileForm.setValue({}) takes complete object   this.profileForm.patchValue({}) can update single property"]
+                },
+                {
+                    value: "FormBuilder :- Its service provide reactive form module",
+                    image: "form2.png"
+                },
+                {
+                    value: "Dynamic forms: FormArray :- its uses FormArray its an alternative to FormGroup. used to create dynamic form ",
+                    image: "form3.png",
+                    desc: [
+                        "To change the controls in the array, use the push, insert, removeAt or clear methods in FormArray itself."
+                    ]
+                },
+                {
+                    value: "formGroup => FormControl => Make group of form control based on object dynamic form will get created change that object form will change",
+                    desc: []
+                },
+                {
+                    value: "2. Template-driven forms :-",
+                    desc: [
+                        "rely on directives in the template to create and manipulate the underlying object model. 2 way binding."
+                    ]
+                },
+            ]
+        },
+        {
+            "question": " Custom form validation",
+            "responses": [{
+                    "value": "In reactive form we just pass function to formcontrol along with other validator",
+                    "image": "form4.png",
+                    "desc": [
+                        "  in Template-driven forms we create the directive and add to the input field",
+                    ]
+                }]
+        },
+        {
+            "question": "Template variables ",
+            "responses": [{
+                    "value": "Building block of Angular applications. Can be reused",
+                    "desc": [' <input #phone placeholder="phone number" />', '<button (click)="callPhone(phone.value)">Call</button>']
+                }]
+        },
+        {
+            question: "Differential loading",
+            responses: [{
+                    value: "create 2 bundle for application 1. small for modern browser . 2. large for old browser",
+                }]
+        },
+        {
+            question: "Eager loading",
+            responses: [{
+                    value: "module or component get loaded at launch opposite of lazy loading",
+                }]
+        },
+        {
+            question: "Angular CLI builders",
+            responses: [{
+                    value: "we can add command or modify existing command like  ng build,ng test and ng lint",
+                    desc: [
+                        "we create 1 node project with schema (input format),builder.json file which has copy-package in it	",
+                        "we right logic in our file index.js give its reference in builder.json file",
+                        "run command tsc it will convert .ts file to .js file",
+                        "we import node project inside our angular project package.json file.", "devDependencies '@example/copy-file':'file:../command-builder",
+                        "we can create command like ng run builder-test:copy-package by adding it in angular.json file",
+                    ]
+                }]
+        },
+        {
+            question: "pass data on navigation",
+            responses: [{
+                    value: "const navigationExtraData = this.router.getCurrentNavigation()",
+                    desc: [
+                        "this.router.navigate(['home'], data); pass data read in home component //navigationExtraData.extras.data"
+                    ]
+                }]
+        },
+        {
+            question: "Zone.js",
+            responses: [{
+                    value: "It work similar to javascript event loop",
+                    desc: [
+                        " JavaScript event loop",
+                        " Its contain Heap,Stack and Queue",
+                        " Heap :- Its has all the data in it like object",
+                        " stack :- When our code execute function get stored in stack.",
+                        "Function calls form a stack of frame set",
+                        " Queue :- Queue store the message, message is link to function and it call the function",
+                        "Runtime handle the message from old one. message get removed",
+                        "from queue and its function get called",
+                        "calling a function creates a new stack frame for that",
+                        "function's use",
+                        "The processing of functions continues until the stack is once again empty",
+                        "Then, the event loop will process the next message in the queue (if there is one)",
+                        "while (queue.waitForMessage()) {",
+                        "queue.processNextMessage()",
+                    ],
+                },
+                {
+                    value: "message :- setTimeout, setInterval, event",
+                    desc: [
+                        "  messages are added anytime an event occurs and there is an event listener attached to it",
+                        "  If there is no listener, the event is lost",
+                        "  If 1 message is being held then other have to w8.  ",
+                        "  setTimeout called with 2 parameter. seconde parameter tell add this to queue after this time",
+                    ]
+                },
+                {
+                    value: "Zone :-  A zone is an execution context that persists across async tasks.",
+                    desc: [
+                        " Angular handle the async operation like setInterval,setTimeout,promise,event in zone after that it trigger the change detection		   ",
+                        " While Zone.js can monitor all the states of synchronous and asynchronous operations Angular additionally provides a service called NgZone",
+                        "ngZone.runOutsideAngular(func) => does to trigger change detection ",
+                        "ngZone.run(func) => detect changes run. There are some 3rd party API zone does not handle e.g 		 ",
+                        "                    New async API(Event drive API) is not handled by Zone, so you need to use ngZone.run() run change detection",
+                        " IF you don't want to run change detection on few events like ['scroll', 'mousemove'];			",
+                        "  create file zone-flags.ts => add =>(window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove'];	",
+                        "  Import file in  Polyfills.ts  import `./zone-flags`; before import 'zone.js'; ",
+                        " If you don't want to run change detection on your app automatically then disable it by",
+                        "                Remove the zone.js import from polyfills.ts:			  ",
+                        " main.ts => bootstrapModule(AppModule, { ngZone: 'noop' })",
+                    ]
+                }
+            ]
+        },
+        {
+            question: "Angular Material",
+            responses: [{
+                    value: "Material Design components for Angular, its new easy to use compare to bootstrap. its new has less feature",
+                    desc: [
+                        "  run ng add @angular/material it will add @angular/material && @angular/cdk",
+                        "  it will add css theme path in angular.json => styles []",
+                        "  ./node_modules/@angular/material/prebuilt-themes/indigo-pink.css ",
+                        "  or you can import in .css file  => @import '~@angular/material/prebuilt-themes/indigo-pink.css';",
+                        "  Add module BrowserAnimationsModule in app.moudle.ts imports. and component you want to use like MatSliderModule,MatTabsModule",
+                    ]
+                }]
+        },
+        {
+            question: "Angular Animation",
+            responses: [{
+                    value: "use for animation. State of element changes from one state to other like 'Open'=>'closed or 'closed'=>'Open' ",
+                    desc: [,
+                        "when change the value of isOpen based on 'open','closed','abhi', it will  pick mentioned style with transition delay",
+                    ]
+                },
+                {
+                    image: "animation1.png"
+                }
+            ]
+        },
+        {
+            question: "Observable",
+            responses: [{
+                    value: "Tt work on producer and consumer logic",
+                    desc: [
+                        "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.",
+                    ]
+                },
+                {
+                    image: "observable1.png",
+                },
+                {
+                    value: "Observers :-Observers are just objects with three callbacks	",
+                    desc: [
+                        "  {",
+                        "      next(x) { console.log('got value ' + x); },",
+                        "      error(err) { console.error('something wrong occurred: ' + err); },",
+                        "      complete() { console.log('done'); }",
+                        "    }",
+                    ]
+                },
+                {
+                    value: "RxJS Operators",
+                    desc: [
+                        "   Operators are functions. 2 type",
+                        "   1. Pipeable Operators  :- can be piped - takes oberable gives new observable ",
+                        "   2. Creation Operators :- standalone function",
+                        "   const observable = from([1, 2, 3]); array",
+                        "   of :- Converts the arguments to an observable sequence",
+                        "          of(1, 2, 3)",
+                        "        .pipe(map((x) => x * x),filter((v) => !(v % 2)))",
+                        "        .subscribe((v) => console.log(`value: ${v}`));	",
+                        "const observable = interval(1000);",
+                        "var itswllRun4Time = observable.pipe(take(4))	"
+                    ]
+                },
+            ]
+        },
+        {
+            question: "Subject",
+            responses: [{
+                    value: "special type of Observable that allows values to be multicasted to many Observers. ",
+                    image: "subject1.png",
+                    desc: [
+                        "        its do the work of both oberable and observer",
+                        "        Every Subject is an Observable.",
+                        "        Every Subject is an Observer.",
+                        "     //  While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.		",
+                        "     Observable and subject :-Subject is multicasted ,Observable is unicast Observable	",
+                        "     BehaviorSubject :-	Its maintain the last emitted value when you subscribe it get emitted first",
+                        "                             const subject = new BehaviorSubject(0); // first value will be 0",
+                        "                          its always maintain the current value like last next value.",
+                        "                         ",
+                        "     ReplaySubject :-  const subject = new ReplaySubject(2); when new subscriber it last 2 value emitted",
+                        "     AsyncSubject :- const subject = new AsyncSubject(); // when subject.complete() then only last value get emitted",
+                        "     asyncScheduler :- code run in aync",
+                        "                       var observable = new Observable((proxyObserver) => {proxyObserver.next(1);proxyObserver.next(2)proxyObserver.complete();",
+                        "                       }).pipe(observeOn(asyncScheduler));",
+                    ]
+                },]
+        },
+        {
+            question: "<ng-template> and <ng-container>",
+            responses: [{
+                    value: "Use as a grouping element",
+                    desc: [
+                        "<ng-template> :- It is never displayed html directly. Use for structural directives such as: ngIf, ngFor, ngSwitch",
+                        "<ng-container> : simple syntax. can be used direclty with html no need of extra directive like *ngIf	"
+                    ]
+                }]
+        },
+        {
+            question: "if else",
+            responses: [{
+                    desc: [
+                        ' <div *ngIf="condition else elseBlock">div1</div> ',
+                        ' <div #elseBlock> div2</div> '
+                    ]
+                }]
+        }
+    ]
+};
 
 
-var FirstComponent = /** @class */ (function () {
-    function FirstComponent() {
-    }
-    FirstComponent.prototype.ngOnInit = function () {
-    };
-    FirstComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-first',
-            template: __webpack_require__(/*! ./first.component.html */ "./src/app/first/first.component.html"),
-            styles: [__webpack_require__(/*! ./first.component.css */ "./src/app/first/first.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], FirstComponent);
-    return FirstComponent;
-}());
+/***/ }),
 
+/***/ "./src/app/files/angularQuestion.ts":
+/*!******************************************!*\
+  !*** ./src/app/files/angularQuestion.ts ***!
+  \******************************************/
+/*! exports provided: questions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "questions", function() { return questions; });
+var questions = {
+    angular: [{
+            question: "AOT",
+            responses: [{
+                    value: "Angular provides two types of compilation:",
+                    desc: [
+                        "1.JIT(Just-in-Time) compilation - compiles inside the browser during runtime.",
+                        "2. AOT(Ahead-of-Time) compilation. compiles during the build time"
+                    ]
+                }]
+        },
+        {
+            question: "Angular Universal",
+            responses: [{
+                    value: "render applications on the server-side :better SEO. fast loading",
+                    desc: []
+                }]
+        },
+        {
+            question: "async pipe",
+            responses: [{
+                    value: "<div>{{ time | async }}</div>	",
+                    desc: [
+                        "when value get resolved by promise or obserable value get printed."
+                    ]
+                }]
+        },
+        {
+            question: "What happens if you use script tag inside template?",
+            responses: [{
+                    value: "angular consider unsafe code and automatically sanitizes it. remove it form view",
+                    desc: []
+                }]
+        },
+        {
+            question: "What are template statements",
+            responses: [{
+                    value: " A template statement responds to an event raised by a binding target such as an element, component, or directive",
+                    desc: [
+                        " <button (click)='editProfile()'>Edit Profile</button>"
+                    ]
+                }]
+        },
+        {
+            question: "What are angular elements",
+            responses: [{
+                    value: "providing a way to use Angular components in non-Angular environments.used as basic html tag	",
+                    desc: []
+                }]
+        },
+        {
+            question: "What are custom elements",
+            responses: [{
+                    value: "kooo",
+                    desc: []
+                }]
+        },
+        {
+            question: "What are custom elements",
+            responses: [{
+                    value: "Custom elements (or Web Components) ",
+                    desc: [
+                        "which extends HTML	. allowing you to define a tag whose content is created and controlled by JavaScript code"
+                    ]
+                }]
+        },
+        {
+            question: "What is router outlet ",
+            responses: [{
+                    value: " <router-outlet></router-outlet>",
+                    desc: [
+                        " <!-- Routed components go here -->	",
+                        " <a routerLink='/todosList' >List of todos</a>",
+                        " <a routerLink='/todosList1' routerLinkActive='active'>List of todos</a>",
+                    ]
+                }]
+        },
+        {
+            question: "What is router state",
+            responses: [{
+                    value: "RouterState is a tree of activated routes	",
+                    desc: []
+                }]
+        },
+        {
+            question: "What is activated route",
+            responses: [{
+                    value: "information about a route associated with a component loaded in an outlet",
+                    desc: [
+                        "  constructor(route: ActivatedRoute)",
+                        "  route.params.pipe(map(p => p.id))",
+                        "  route.url.pipe(map(segments => segments.join('')))",
+                        "  route.data.pipe(map(d => d.user))",
+                    ]
+                }]
+        },
+        {
+            question: "What is the purpose of Wildcard route",
+            responses: [{
+                    value: "kooo",
+                    desc: [
+                        " { path: '**', component: PageNotFoundComponent }"
+                    ]
+                }]
+        },
+        {
+            question: "What is metadata rewriting",
+            responses: [{
+                    value: "converts the expression initializing the fields such as useClass, useValue, useFactory",
+                    desc: []
+                }]
+        },
+        {
+            question: "What is the purpose of any type cast function",
+            responses: [{
+                    value: "To disable type error",
+                    desc: [
+                        "template:  '{{ $any(user).contacts.email }}'",
+                        "template:   '{{ $any(this).contacts.email }}'",
+                    ]
+                }]
+        },
+        {
+            question: "Non null type assertion operator",
+            responses: [{
+                    value: "{{contact!.email}} handle null",
+                    desc: []
+                }]
+        },
+        {
+            question: "What is zone",
+            responses: [{
+                    value: "A Zone is an execution context that persists across async tasks	",
+                    desc: [
+                        "Angular relies on zone.js to run Angular's change detection processes when native JavaScript operations raise events"
+                    ]
+                }]
+        },
+        {
+            question: "How to inject the dynamic script in angular",
+            responses: [{
+                    value: "Using DomSanitizer we can inject the dynamic Html,Style,Script,Url.",
+                    desc: [
+                        "htmlSnippet: string = this.sanitizer.bypassSecurityTrustScript(<script>safeCode()</script>);",
+                        "<div [innerHtml]='htmlSnippet'></div>"
+                    ]
+                }]
+        },
+        {
+            question: "Angular Ivy",
+            responses: [{
+                    value: "new rendering engine for Angular",
+                    desc: [
+                        "   enable ng new ivy-demo app --enable-ivy",
+                        "   add in existing project tsconfig.app.json->angularCompilerOptions-> 'enableIvy': true",
+                        "  Generated code that is easier to read and debug at runtime",
+                        "  Faster re-build time",
+                        "  Improved payload size",
+                        "  Improved template type checking",
+                        "  used with AOT"
+                    ]
+                }]
+        },
+        {
+            question: "Angular Language Service",
+            responses: [{
+                    value: 'The Angular Language Service is a way to get completions, errors, hints, and navigation inside your Angular templates.',
+                    desc: [
+                        "   npm install --save-dev @angular/language-service",
+                        "   and install vs code extensions angular language service.",
+                    ]
+                }]
+        },
+        {
+            question: "Web workers",
+            responses: [{
+                    value: 'its run in background does not freeze the screen',
+                    desc: []
+                }]
+        },
+        {
+            question: "codelyzer",
+            responses: [{
+                    value: 'Provides set of tslint rules3',
+                    desc: []
+                }]
+        },
+        {
+            question: "What are the case types in Angular",
+            responses: [{
+                    value: '23',
+                    desc: [
+                        " 1. camelCase  :-Symbols, properties, methods, pipe names, non-component directive selectors,",
+                        " 2. UpperCamelCase (or PascalCase): Class names, including classes that define components, interfaces, NgModules, directives, and pipes",
+                        " 3. dash-case (or 'kebab-case'): file names",
+                        " 4. UPPER_UNDERSCORE_CASE :-All constants",
+                    ]
+                }]
+        },
+        {
+            "question": "Decorators",
+            "responses": [{
+                    "value": "Class Decorators:- @Component({...}),@Directive({...}),@Pipe({...}),@Injectable(),@NgModule()",
+                    "desc": [
+                        "field decorators :- @Input() myProperty;  <my-cmp [myProperty]='someExpression'>). ",
+                        "field decorators :- @Output() myEvent = new EventEmitter();  <my-cmp (myEvent)='doSomething()'>).",
+                        "@HostBinding('class.valid') isValid;  bind element property",
+                        "@HostListener('click', ['$event']) onClick(e)  bind event",
+                    ]
+                }]
+        },
+        {
+            question: "What is platform in Angular",
+            responses: [{
+                    value: '',
+                    desc: [
+                        "context in which an Angular application runs",
+                        "it run in browser (platform-browser). it can also run on server (platform-server)",
+                    ]
+                }]
+        },
+        {
+            question: "How do you select an element with in a component template ",
+            responses: [{
+                    value: '@ViewChild',
+                    desc: [
+                        "<input #uname>",
+                        "@ViewChild('uname') input;",
+                        "console.log(this.input.nativeElement.value);",
+                    ]
+                }]
+        },
+        {
+            question: "How do you detect route change in Angular",
+            responses: [{
+                    value: 'this.router.events.subscribe((event: Event) => {})',
+                    desc: []
+                }]
+        },
+        {
+            question: "What is the purpose of differential loading in CLI",
+            responses: [{
+                    value: '23',
+                    desc: [
+                        "create 2 build ES2015 for modern browser. ES5 syntax for old browser"
+                    ]
+                }]
+        },
+        {
+            question: "How do you upgrade angular version",
+            responses: [{
+                    value: 'ng update //ng update @angular/cli @angular/core',
+                    desc: []
+                }]
+        },
+        {
+            question: "What are the ways to trigger change detection in Angular",
+            responses: [{
+                    value: '23',
+                    desc: [
+                        "You can inject either ApplicationRef or NgZone, or ChangeDetectorRef into your component ",
+                        "ApplicationRef.tick():change detection run on entire tree",
+                        "NgZone.run(callback) :-",
+                        "ChangeDetectorRef.detectChanges() :- run in its component and its children",
+                    ]
+                }]
+        },
+        {
+            question: "change detection",
+            responses: [{
+                    value: 'change detection run and angular update the view',
+                    desc: [
+                        "it run because of ",
+                        "1.When component load call ApplicationRef.tick() ",
+                        "2.Event listener",
+                        "3. HTTP request",
+                        "4. MacroTasks, such as setTimeout() or setInterval()  ",
+                        "5. MicroTasks, such as Promise.then() 	",
+                        "6. Other async operations :- WebSocket.onmessage() and Canvas.toBlob()",
+                    ]
+                }]
+        },
+        {
+            question: "difference between interpolated content and innerHTML",
+            responses: [
+                {
+                    value: "<div >{{htmlSnippet}}</div> && <div [innerHTML]='htmlSnippet'></div>",
+                    desc: [
+                        " innerHTML get interpreted and script get removed. ",
+                        "in interpolation it does not get interpreted print as text content	want to attach html then only innerHTML will work not {{}}	   "
+                    ]
+                }
+            ]
+        },
+        {
+            question: "What is RxJS",
+            responses: [{
+                    value: "RxJS is a library for composing asynchronous and callback-based code using Observables it uses operators for processing observables.",
+                    desc: []
+                }
+            ]
+        },
+        {
+            question: "What is an observable",
+            responses: [{
+                    value: "An Observable is a unique Object similar to a Promise that can help manage async code. ",
+                    desc: [
+                        "The observables are created using new keyword.its can emit multiple value"
+                    ]
+                }
+            ]
+        },
+        {
+            question: "What is an observer?",
+            responses: [{
+                    value: " Consumer what will get",
+                    desc: [
+                        "       Observer is an interface for a consumer of push-based notifications delivered by an Observable	",
+                        "      const observer = {",
+                        "     next: x => console.log('Observer got a next value: ' + x),",
+                        "     error: err => console.error('Observer got an error: ' + err),",
+                        "     complete: () => console.log('Observer got a complete notification'),",
+                        "}"
+                    ]
+                }
+            ]
+        },
+        {
+            question: "What is the difference between promise and observable",
+            responses: [{
+                    value: "adf",
+                    desc: [
+                        "    Observable	",
+                        "    Declarative: it will not run until you subscribe it",
+                        "    Provide multiple values over time",
+                        "    Provides chaining and subscription to handle complex applications",
+                        "    Promise",
+                        "    Execute immediately on creation",
+                        "    Provide only one",
+                    ]
+                }
+            ]
+        },
+        {
+            question: "subject",
+            responses: [{
+                    value: " While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast",
+                    desc: []
+                }
+            ]
+        },
+        {
+            question: "What are observable creation functions ",
+            responses: [{
+                    desc: [
+                        "    from a promise :-const observable = from(fetch('/api/endpoint')); ",
+                        "    from counter:-  const observable = ajax('/api/data');",
+                        "    from an event:-  const el = document.getElementById('custom-element');",
+                        "                     const observable = fromEvent(el, 'mousemove'); ",
+                        "    form ajax   :-   const observable = ajax('/api/data')	",
+                    ]
+                }
+            ]
+        },
+        {
+            question: "asdf",
+            responses: [{
+                    value: "adf",
+                    desc: []
+                }
+            ]
+        },
+        {
+            question: "asdf",
+            responses: [{
+                    value: "adf",
+                    desc: []
+                }
+            ]
+        },
+        {
+            question: "asdf",
+            responses: [{
+                    value: "adf",
+                    desc: []
+                }
+            ]
+        },
+    ]
+};
+
+
+/***/ }),
+
+/***/ "./src/app/files/javascript.ts":
+/*!*************************************!*\
+  !*** ./src/app/files/javascript.ts ***!
+  \*************************************/
+/*! exports provided: data */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+var data = [{
+        question: "syntax parser",
+        responses: [{
+                value: "A program that read your code and determine and what it does and if its grammar is valid",
+            }]
+    },
+    {
+        question: "Lexical environment",
+        responses: [{
+                value: "where something sit physically in the code you write",
+                desc: []
+            }]
+    },
+    {
+        question: "Execution context",
+        responses: [{
+                value: " Wrapper to help manage the code that is running, when function is called new execution context is crated",
+                desc: []
+            }]
+    },
+    {
+        question: "Global",
+        responses: [{
+                value: "Not inside function",
+                desc: []
+            }]
+    }, {
+        question: "Hoisting",
+        responses: [{
+                value: "Memory get allocated for variable and function while Execution context get created",
+                desc: []
+            }]
+    }, {
+        question: "Scope",
+        responses: [{
+                value: "Where variable is available in your code",
+                desc: []
+            }]
+    }, {
+        question: "Let",
+        responses: [{
+                desc: [
+                    "block scope",
+                    "not Hoisting",
+                    "can not redeclare",
+                    "get different variable in Memory each time loop run"
+                ]
+            }]
+    }, {
+        question: "Types in JavaScript",
+        responses: [{
+                value: "1. Primitive Types",
+                desc: [
+                    "types of data that represent single data",
+                    "that is not a object",
+                    "Value type we can not change that we have reassign value",
+                    "Value type"
+                ]
+            },
+            {
+                value: "2.Non Primitive Types",
+                desc: [
+                    "Array and object",
+                    "reference type"
+                ]
+            }
+        ]
+    }, {
+        question: "Dynamic type",
+        responses: [{
+                value: "We don't tell what kind of data we variable hold its get decided at runtime",
+                desc: []
+            }]
+    },
+    {
+        question: "Object",
+        responses: [{
+                value: "Key value pair var obj  = new Object()",
+                desc: []
+            }]
+    },
+    {
+        question: "Object literal",
+        responses: [{
+                value: "var obj = {}",
+                desc: []
+            }]
+    },
+    {
+        question: "Function",
+        responses: [{
+                value: "Function are object,we can attach property, it has property NAME,CODE ",
+                desc: []
+            }]
+    },
+    {
+        question: "First class function",
+        responses: [{
+                value: "Everything we can do with other types we can do with function.Assign them to variable,pass them, create them on fly",
+                desc: []
+            }]
+    },
+    {
+        question: "Function statement",
+        responses: [{
+                value: "don't return anything",
+                desc: []
+            }]
+    },
+    {
+        question: "Function expression",
+        responses: [{
+                value: "unit of code that results in a value. it doesn't have to save variable",
+                desc: []
+            }]
+    },
+    {
+        question: "Anonymous  function",
+        responses: [{
+                value: "function does not have name",
+                desc: [
+                    "with reference with a variable"
+                ]
+            }]
+    },
+    {
+        question: " Mutated & Immutable",
+        responses: [{
+                desc: [
+                    "Mutated :changed, array,object",
+                    "Immutable :cant changed, primitive type , var let const"
+                ]
+            }]
+    },
+    {
+        question: "this",
+        responses: [{
+                value: "from where function is being called",
+                desc: []
+            }]
+    },
+    {
+        question: "Call Apply and Bind",
+        responses: [{
+                value: "Change to this",
+                desc: [
+                    "   var changedThis = myFunction.bind(this);changedThis();",
+                    "   myFunction.call(this,param1,param2);  pass parameter ",
+                    "    myFunction.apply(this,[param1,param2]); pass array ",
+                    "///////////////////////////",
+                    " var obj ={",
+                    "     name:'abhi',",
+                    "     print:function(val){  ",
+                    "      console.log(val,this.name)",
+                    "   }",
+                    "   }",
+                    "   obj.print('hi ')",
+                    "   var obj2 ={",
+                    "     name:'rohit'",
+                    "   }",
+                    "   obj.print.call(obj2,'hello ')",
+                ]
+            }]
+    },
+    {
+        question: "Curring",
+        responses: [{
+                value: "Crating copy of function parameter with some preset parameter :/ used in mathematical ",
+                desc: [
+                    " function multi(a,b){",
+                    "     return a*b;",
+                    " }         ",
+                    " var multiby2 = multi.bind(this,2);",
+                    " multiby2(4);",
+                ]
+            }]
+    },
+    {
+        question: "Inheritance",
+        responses: [{
+                value: "Object get access to properties and method of another object",
+                desc: []
+            }]
+    },
+    {
+        question: "Prototype ",
+        responses: [{
+                value: "All object in JavaScript has property prototype which is reference to other object",
+                desc: [
+                    "it get used by new operator"
+                ]
+            }]
+    },
+    {
+        question: "New",
+        responses: [{
+                value: "var john = new User() , new will create new object var ={} .if you don't return value then JavaScript will return new object that is crated by new",
+                desc: [
+                    "this will get return from the function",
+                    "Function constructor :-Normal function that is used to construct a object",
+                    "The 'this' variable point to new empty object. and that object is get return automatically ",
+                ]
+            },
+            {
+                value: " Construct a object with a function  ",
+                image: "./assets/images/new.png",
+            },
+        ]
+    },
+    {
+        question: "Inheritance 1",
+        responses: [{
+                value: "  function User(fname,lname){",
+                desc: [
+                    "     this.name= fname",
+                    "      this.lName =lname;",
+                    "  }  ",
+                ]
+            },
+            {
+                value: "  User.prototype.getFullName = function(){",
+                desc: [
+                    " return this.name +this.lName;",
+                    "}"
+                ]
+            },
+            {
+                value: "function SmartUser(fname,lname,age){",
+                desc: [
+                    "      User.call(this,fname,lname);",
+                    "      this.age = age;",
+                    "  }",
+                    " SmartUser.prototype =  User.prototype;",
+                    " //   SmartUser.prototype = Object.create(User.prototype);",
+                    "   SmartUser.prototype.fullDetail = function(){",
+                    "          return 'my full details is ' this.name +''+this.lname +'age ='+ this.age;",
+                    "   }",
+                    "   var smartUser = new SmartUser('abhishek','yadav',27);",
+                    "   console.log(smartUser.getFullName())",
+                    "   console.log(smartUser.name)",
+                    "   console.log(smartUser.lName)",
+                    "   console.log(smartUser.age)",
+                    "   console.log(smartUser.fullDetail())",
+                ]
+            },
+            {
+                value: " Don't use method inside function if we have multiple object function get method get repeated in Memory",
+                desc: [
+                    "User.prototype.getFullName = function(){",
+                    "return this.name +this.lname;",
+                    "            }",
+                    "instead of that Assign that method to prototype it will get crated only once in Memory                             ",
+                    "Function constructor :-Normal function that is used to construct a object",
+                    "The 'this' variable point to new empty object. and that object is get return automatically ",
+                ]
+            },
+        ]
+    },
+    {
+        question: " Pure Prototype Inheritance :- ",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: [
+                    "  Var user = {",
+                    "      name:'default',",
+                    "      lName:'default',",
+                    "      getFullName:function(){",
+                    "          return this.name+ this.lName",
+                    "      }",
+                    "  }",
+                    " var john = Object.create(user)"
+                ]
+            }]
+    },
+    {
+        question: "class",
+        responses: [{
+                value: "JavaScript does not have class internally it uses prototype : its Synthetic sugar around object",
+                desc: []
+            }]
+    },
+    {
+        question: "Inheritance 2 class",
+        responses: [{
+                desc: [
+                    "     class User{",
+                    "         constructor(name,lname){",
+                    "               this.name = name;",
+                    "              this.lName = lname;",
+                    "            }",
+                    "                getFullName(){",
+                    "              return this.name + this.lName;",
+                    "            }",
+                    "       }",
+                    "    class SmartUser extends User{",
+                    "                  constructor(name,lname){",
+                    "                         super(name,lname);",
+                    "                         this.age = age;",
+                    "                   }",
+                    "                    fullDetail = function(){",
+                    "                           return 'my full details is +' this.name +' '+this.lname +'age ='+ this.age;",
+                    "                     }",
+                    "     }                                    ",
+                    "            ",
+                    "    var smartUser = new SmartUser('abhishek','yadav',27);",
+                    "    console.log(smartUser.getFullName())",
+                    "    console.log(smartUser.name)",
+                    "    console.log(smartUser.lName)",
+                    "    console.log(smartUser.age)",
+                    "    console.log(smartUser.fullDetail())",
+                ]
+            }]
+    },
+    {
+        question: "use strict",
+        responses: [{
+                value: "Add extra rule while it parse the code like if we Assign value to variable without declaring it name ='abhishek' throw error",
+                desc: []
+            }]
+    },
+    {
+        question: "Library like jquery",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                image: "./assets/images/lib-like-jquery.png",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+    {
+        question: "33333333",
+        responses: [{
+                value: "xxxxxxxxxxxx",
+                desc: []
+            }]
+    },
+];
 
 
 /***/ }),
@@ -1145,260 +2656,88 @@ var HashingComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/hero.component.html":
-/*!*************************************!*\
-  !*** ./src/app/hero.component.html ***!
-  \*************************************/
+/***/ "./src/app/header/header.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/header/header.component.css ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\nHero Details\r\n<div>\r\n    {{junk}}\r\n44444444\r\n    Name : {{hero?.name}}\r\n</div>\r\n<div>\r\n    Last Name : {{hero?.lastName}}\r\n</div>\r\n\r\n<div>\r\n    222222222222222222222222\r\n    {{test[0]||'not found'}}\r\n    {{test[9]||\"not' found 9\"}}\r\n    <input type=\"text\">\r\n\r\n</div>\r\n<div>\r\n    <input type=\"text\" placeholder=\"{{test[3]||'abhishek' }}\" />\r\n    <input type=\"text\" placeholder=\"{{test[13]||'444444444444444444' }}\" />\r\n</div>\r\nabhishek\r\n\r\n\r\n\r\n \r\n<!-- <video controls  loop=\"true\" autoplay=\"true\" width=\"500\" height=\"300\">\r\n    <source  type=\"video/mp4\" src=\"../assets/test.mp4\">\r\n        Sorry, your browser doesn't support embedded videos.\r\n</video> -->\r\n\r\n"
+module.exports = ".nav-bar {\r\n    line-height: 60px;\r\n    font-size: 16px;\r\n}\r\n.nav-bar .active{\r\n    color: rgb(97, 218, 251);\r\n}\r\n.nav-bar a{\r\n    color: var(--white);\r\n    padding-left: 13px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0lBQ2pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksbUJBQW1CO0lBQ25CLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXYtYmFyIHtcclxuICAgIGxpbmUtaGVpZ2h0OiA2MHB4O1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcbi5uYXYtYmFyIC5hY3RpdmV7XHJcbiAgICBjb2xvcjogcmdiKDk3LCAyMTgsIDI1MSk7XHJcbn1cclxuLm5hdi1iYXIgYXtcclxuICAgIGNvbG9yOiB2YXIoLS13aGl0ZSk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEzcHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
-/***/ "./src/app/hero.component.ts":
-/*!***********************************!*\
-  !*** ./src/app/hero.component.ts ***!
-  \***********************************/
-/*! exports provided: HeroComponent */
+/***/ "./src/app/header/header.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/header/header.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"nav-bar\">\n  <nav>\n      <a routerLinkActive=\"active\" routerLink=\"/home\">Home</a>\n      <a routerLinkActive=\"active\" routerLink=\"/angular\">Angular</a>\n      <a routerLinkActive=\"active\" routerLink=\"/data-structure\">Data Structure</a>\n      <a routerLinkActive=\"active\" routerLink=\"/javascript\">Javascript</a>\n      <a routerLinkActive=\"active\" routerLink=\"/css\">CSS</a>\n  </nav>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/header/header.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/header/header.component.ts ***!
+  \********************************************/
+/*! exports provided: HeaderComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroComponent", function() { return HeroComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
 
 
-
-
-
-var HeroComponent = /** @class */ (function () {
-    function HeroComponent(service, route) {
-        this.service = service;
-        this.route = route;
-        this.calendarPlugins = [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_4__["default"]];
-        this.junk = " {{test[0]||'not found'}}";
+var HeaderComponent = /** @class */ (function () {
+    function HeaderComponent() {
     }
-    HeroComponent.prototype.ngOnInit = function () {
-        this.id = this.route.snapshot.params.id;
-        this.getHero();
-        this.test = ["abhi", "yadav", "667", "not"];
-        this.service.heatApi();
+    HeaderComponent.prototype.ngOnInit = function () {
     };
-    HeroComponent.prototype.getHero = function () {
-        var _this = this;
-        this.service.getHero(this.id).subscribe(function (x) {
-            _this.hero = x[0];
-        });
-    };
-    HeroComponent.prototype.ngOnDestroy = function () {
-        console.log("Destroy   ngOnDestroy called abhishek");
-    };
-    HeroComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'hero',
-            template: __webpack_require__(/*! ./hero.component.html */ "./src/app/hero.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_service__WEBPACK_IMPORTED_MODULE_2__["HeroService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
-    ], HeroComponent);
-    return HeroComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/heros.component.html":
-/*!**************************************!*\
-  !*** ./src/app/heros.component.html ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "Hero Details\r\n<div *ngFor=\"let heroData of heros\">\r\n<div>\r\n    Name : {{heroData.name}}\r\n</div>\r\n<div>\r\n    Last Name : {{heroData.lastName}}\r\n</div>\r\n  <a  routerLink=\"../hero/{{heroData.id}}\">{{heroData.name}}</a>\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/heros.component.ts":
-/*!************************************!*\
-  !*** ./src/app/heros.component.ts ***!
-  \************************************/
-/*! exports provided: HerosComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HerosComponent", function() { return HerosComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-
-
-
-var HerosComponent = /** @class */ (function () {
-    function HerosComponent(service) {
-        this.service = service;
-    }
-    HerosComponent.prototype.ngOnInit = function () {
-        this.getHero();
-    };
-    HerosComponent.prototype.getHero = function () {
-        var _this = this;
-        this.service.getHeroes().subscribe(function (x) {
-            _this.heros = x;
-        });
-    };
-    HerosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'heros',
-            template: __webpack_require__(/*! ./heros.component.html */ "./src/app/heros.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_service__WEBPACK_IMPORTED_MODULE_2__["HeroService"]])
-    ], HerosComponent);
-    return HerosComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/highlight.directive.ts":
-/*!****************************************!*\
-  !*** ./src/app/highlight.directive.ts ***!
-  \****************************************/
-/*! exports provided: HighlightDirective */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightDirective", function() { return HighlightDirective; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-/* tslint:disable:member-ordering */
-
-var HighlightDirective = /** @class */ (function () {
-    function HighlightDirective(el) {
-        this.el = el;
-        this.el.nativeElement.style.backgroundColor = 'blue';
-    }
-    HighlightDirective.prototype.onMouseEnter = function () {
-        this.highlight(this.highlightColor || this.defaultColor || 'red');
-    };
-    HighlightDirective.prototype.onMouseLeave = function () {
-        this.highlight(null);
-    };
-    HighlightDirective.prototype.highlight = function (color) {
-        this.el.nativeElement.style.backgroundColor = color;
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
-    ], HighlightDirective.prototype, "defaultColor", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('appHighlight'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
-    ], HighlightDirective.prototype, "highlightColor", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseenter'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], HighlightDirective.prototype, "onMouseEnter", null);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
-    ], HighlightDirective.prototype, "onMouseLeave", null);
-    HighlightDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
-            selector: '[appHighlight]'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
-    ], HighlightDirective);
-    return HighlightDirective;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/highlightdir/highlightdir.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/highlightdir/highlightdir.component.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hpZ2hsaWdodGRpci9oaWdobGlnaHRkaXIuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/highlightdir/highlightdir.component.html":
-/*!**********************************************************!*\
-  !*** ./src/app/highlightdir/highlightdir.component.html ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>My First Attribute Directive</h1>\n\n<h4>Pick a highlight color</h4>\n<div>\n  <input type=\"radio\" name=\"colors\" (click)=\"color='lightgreen'\">Green\n  <input type=\"radio\" name=\"colors\" (click)=\"color='yellow'\">Yellow\n  <input type=\"radio\" name=\"colors\" (click)=\"color='cyan'\">Cyan\n</div>\n<p [appHighlight]=\"color\">Highlight me!</p>\n\n<p [appHighlight]=\"color\" defaultColor=\"violet\">\n  Highlight me too!\n</p>"
-
-/***/ }),
-
-/***/ "./src/app/highlightdir/highlightdir.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/highlightdir/highlightdir.component.ts ***!
-  \********************************************************/
-/*! exports provided: HighlightdirComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightdirComponent", function() { return HighlightdirComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var HighlightdirComponent = /** @class */ (function () {
-    function HighlightdirComponent() {
-    }
-    HighlightdirComponent.prototype.ngOnInit = function () {
-    };
-    HighlightdirComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-highlightdir',
-            template: __webpack_require__(/*! ./highlightdir.component.html */ "./src/app/highlightdir/highlightdir.component.html"),
-            styles: [__webpack_require__(/*! ./highlightdir.component.css */ "./src/app/highlightdir/highlightdir.component.css")]
+            selector: 'app-header',
+            template: __webpack_require__(/*! ./header.component.html */ "./src/app/header/header.component.html"),
+            styles: [__webpack_require__(/*! ./header.component.css */ "./src/app/header/header.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], HighlightdirComponent);
-    return HighlightdirComponent;
+    ], HeaderComponent);
+    return HeaderComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/home.component.html":
-/*!*************************************!*\
-  !*** ./src/app/home.component.html ***!
-  \*************************************/
+/***/ "./src/app/home/home.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/home/home.component.css ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n     <div>\r\n       Pipe uppercase\r\n         {{'abhishek'|uppercase}}\r\n         <button (click)=\"trigger()\">trigger</button>\r\n     </div>\r\n     <div>\r\n        <button type=\"submit\" [attr.disabled]=\"''\" class=\"btn btn-primary\" >disable</button>\r\n        <input [disabled]=\"true\" type=\"text\" value=\"{{pageNo}}\">\r\n     </div>\r\n    <label>2 way Input: {{title}}</label>\r\n    <input [(ngModel)]=\"title\" placeholder=\"name\" />\r\n    <br>\r\n    <label>1 way Input:{{fullName}}\r\n    </label>\r\n    <input #fullNameValue (keyup)=\"fullName =fullNameValue.value\" value=\"{{fullName}}\" placeholder=\"last Name\" />\r\n    <br>\r\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"clickUpdateInput(fullNameValue.value)\">Update Input</button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n    <div>Enbable click</div>\r\n    <div>\r\n        <input type=\"checkbox\" [attr.checked]=\"checked ? checked : null\" (click)=\"this.checked = !this.checked;\">\r\n    </div>\r\n</div>\r\n\r\n<div class=\"row\" *ngFor=\"let h of data\">\r\n    <a (click)=\"checked == true ? clickedOnHero(h):false\" href=\"javascript:void(0)\" class=\"alert-link\">{{ h.name}}</a>\r\n</div>\r\n<ng-template [ngIf]=\"user\">\r\n    <div class=\"row\">\r\n        <input (keyup)=\"user.name=temp.value\" type=\"text\" #temp/>\r\n          Selected user name is {{user?.name}}\r\n    </div>\r\n    <div>\r\n        <detail [parrentData]=\"user\"></detail>\r\n    </div>\r\n\r\n</ng-template>\r\n\r\n\r\n<div class=\"row\">\r\n    <input type=\"button\" (click)=\"this.show = true;\" value=\"Show\" />\r\n    <input type=\"button\" (click)=\"this.show = false;\" value=\"Hide\" />\r\n    <div *ngIf=\"show\">\r\n        show is enabled\r\n    </div>\r\n    \r\n</div>\r\n{{heroData|json}}\r\n<app-chilld name=\"abhishek\"></app-chilld>"
+module.exports = "\r\n.border{\r\n    border:1px solid red;\r\n   \r\n}\r\n.box{\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    border: 1px solid rgb(46, 122, 192)\r\n}\r\n.box-item{\r\n    display: inline-block;\r\n    width: 33.33%;\r\n    height: 200px;\r\n    vertical-align: top;\r\n    box-sizing: border-box;\r\n    text-align: center;\r\n}\r\n.q_border{\r\n   \r\n    width: 80%;\r\n    margin:auto;\r\n    height: 100px;\r\n    margin-top: 50px;\r\n    padding-top: 18px;\r\n    box-sizing: border-box;\r\n}\r\n.border_y{\r\n    border: 1px solid yellowgreen;\r\n}\r\n.q_padding{\r\n   padding-top: 100px;\r\n}\r\n.q_margin{\r\n    margin-top: 100px;\r\n}\r\n.flex{\r\n    display: flex;\r\n    width: 100%;\r\n    height: 120px;\r\n    background-color: Silver;\r\n    margin-bottom: 10px;\r\n}\r\n.flex-container {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 240px;\r\n    background-color: Silver;\r\n    margin-bottom: 10px;\r\n}\r\n.flex-item {\r\n    background-color: DeepSkyBlue;\r\n    width: 20%;\r\n    height: 100px;\r\n    margin: 5px;\r\n}\r\n.flex-item1 {\r\n    background-color: DeepSkyBlue;\r\n    width: 20%;\r\n    margin: 5px;\r\n}\r\n.btn{\r\n   margin: 16px; \r\n}\r\n.border1{\r\n    border:1px solid rebeccapurple\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksb0JBQW9COztBQUV4QjtBQUNBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFdBQVc7SUFDWDtBQUNKO0FBQ0E7SUFDSSxxQkFBcUI7SUFDckIsYUFBYTtJQUNiLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsc0JBQXNCO0lBQ3RCLGtCQUFrQjtBQUN0QjtBQUNBOztJQUVJLFVBQVU7SUFDVixXQUFXO0lBQ1gsYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsc0JBQXNCO0FBQzFCO0FBQ0E7SUFDSSw2QkFBNkI7QUFDakM7QUFDQTtHQUNHLGtCQUFrQjtBQUNyQjtBQUNBO0lBQ0ksaUJBQWlCO0FBQ3JCO0FBQ0E7SUFDSSxhQUFhO0lBQ2IsV0FBVztJQUNYLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSxhQUFhO0lBQ2IsV0FBVztJQUNYLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsbUJBQW1CO0FBQ3ZCO0FBRUE7SUFDSSw2QkFBNkI7SUFDN0IsVUFBVTtJQUNWLGFBQWE7SUFDYixXQUFXO0FBQ2Y7QUFDQTtJQUNJLDZCQUE2QjtJQUM3QixVQUFVO0lBQ1YsV0FBVztBQUNmO0FBQ0E7R0FDRyxZQUFZO0FBQ2Y7QUFDQTtJQUNJO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYm9yZGVye1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCByZWQ7XHJcbiAgIFxyXG59XHJcbi5ib3h7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2IoNDYsIDEyMiwgMTkyKVxyXG59XHJcbi5ib3gtaXRlbXtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHdpZHRoOiAzMy4zMyU7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnFfYm9yZGVye1xyXG4gICBcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBtYXJnaW46YXV0bztcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDE4cHg7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcbi5ib3JkZXJfeXtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHllbGxvd2dyZWVuO1xyXG59XHJcbi5xX3BhZGRpbmd7XHJcbiAgIHBhZGRpbmctdG9wOiAxMDBweDtcclxufVxyXG4ucV9tYXJnaW57XHJcbiAgICBtYXJnaW4tdG9wOiAxMDBweDtcclxufVxyXG4uZmxleHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBTaWx2ZXI7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG59XHJcbi5mbGV4LWNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogU2lsdmVyO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBEZWVwU2t5Qmx1ZTtcclxuICAgIHdpZHRoOiAyMCU7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbn1cclxuLmZsZXgtaXRlbTEge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogRGVlcFNreUJsdWU7XHJcbiAgICB3aWR0aDogMjAlO1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbn1cclxuLmJ0bntcclxuICAgbWFyZ2luOiAxNnB4OyBcclxufVxyXG4uYm9yZGVyMXtcclxuICAgIGJvcmRlcjoxcHggc29saWQgcmViZWNjYXB1cnBsZVxyXG59Il19 */"
 
 /***/ }),
 
-/***/ "./src/app/home.component.ts":
-/*!***********************************!*\
-  !*** ./src/app/home.component.ts ***!
-  \***********************************/
+/***/ "./src/app/home/home.component.html":
+/*!******************************************!*\
+  !*** ./src/app/home/home.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "Home works"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
 /*! exports provided: HomeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1407,83 +2746,90 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/service */ "./src/app/services/service.ts");
-
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(service, cdr
-    // ,private service1: Service1Service
-    ) {
-        var _this = this;
-        this.service = service;
-        this.cdr = cdr;
-        this.title = 'home';
-        this.pageNo = 12;
-        this.data = [
-            { id: 11, name: 'Mr. Nice' },
-            { id: 12, name: 'Narco' },
-            { id: 13, name: 'Bombasto' }
-        ];
-        this.fullName = 'rohit';
-        this.clickUpdateInput = (function (val) {
-            _this.fullName = val;
-            _this.fullName1 = _this.fullName1;
-        });
-        this.clickedOnHero = (function (usr) {
-            _this.user = usr;
-        });
+    function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
-        console.log("home page is initialized");
-        this.checked = false;
-        this.show = false;
-        this.getHeroData();
-        this.getDatefromChildren();
-        console.log("calll");
-    };
-    HomeComponent.prototype.ngOnDestroy = function () {
-        // console.log("home component destroyed");
-    };
-    HomeComponent.prototype.ngOnChanges = function () {
-        console.log("home component ngOnChanges");
-    };
-    HomeComponent.prototype.getHeroData = function () {
-        this.heroData = this.service.getData();
-        this.heroData1 = this.service.getData();
-        this.getHeroes();
-    };
-    HomeComponent.prototype.getHeroes = function () {
-        var _this = this;
-        this.service.getHeroes().subscribe(function (x) {
-            _this.heroData = x;
-        });
-    };
-    HomeComponent.prototype.trigger = function () {
-        console.log('abhi');
-        this.cdr.markForCheck();
-        this.cdr.reattach();
-        this.cdr.detectChanges();
-        this.cdr.detach();
-        this.cdr.reattach();
-        this.cdr.detectChanges();
-    };
-    HomeComponent.prototype.getDatefromChildren = function () {
-        this.service.getEmitter("p1").subscribe(function (x) {
-            console.log("Getting data from p1 child ", x);
-        });
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'home',
-            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home.component.html")
+            selector: 'app-home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].Emulated,
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_service__WEBPACK_IMPORTED_MODULE_2__["HeroService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]
-            // ,private service1: Service1Service
-        ])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/javascript/javascript.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/javascript/javascript.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2phdmFzY3JpcHQvamF2YXNjcmlwdC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/javascript/javascript.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/javascript/javascript.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-tab-group (selectedTabChange)=\"tabChange($event)\" mat-align-tabs=\"center\" animationDuration=\"0ms\">\n  <mat-tab label=\"Basic\">\n      <app-data imageBaseUrl=\"/assets/images/javascript\" [data]=\"jsData\"></app-data>\n  </mat-tab>\n  <mat-tab label=\"Topic\">\n      <app-data  imageBaseUrl=\"/assets/images/javascript\" [data]=\"jsData\"></app-data>\n  </mat-tab>\n</mat-tab-group>"
+
+/***/ }),
+
+/***/ "./src/app/javascript/javascript.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/javascript/javascript.component.ts ***!
+  \****************************************************/
+/*! exports provided: JavascriptComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JavascriptComponent", function() { return JavascriptComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _files_javascript__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../files/javascript */ "./src/app/files/javascript.ts");
+
+
+
+var JavascriptComponent = /** @class */ (function () {
+    function JavascriptComponent() {
+        this.jsData = _files_javascript__WEBPACK_IMPORTED_MODULE_2__["data"];
+    }
+    JavascriptComponent.prototype.ngOnInit = function () {
+    };
+    JavascriptComponent.prototype.tabChange = function (event) {
+        if (event.index == 0) {
+            this.jsData = _files_javascript__WEBPACK_IMPORTED_MODULE_2__["data"];
+        }
+        else if (event.index == 1) {
+            this.jsData = 2;
+        }
+    };
+    JavascriptComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-javascript',
+            template: __webpack_require__(/*! ./javascript.component.html */ "./src/app/javascript/javascript.component.html"),
+            styles: [__webpack_require__(/*! ./javascript.component.css */ "./src/app/javascript/javascript.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], JavascriptComponent);
+    return JavascriptComponent;
 }());
 
 
@@ -1651,39 +2997,6 @@ var ListComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/my-guard.guard.ts":
-/*!***********************************!*\
-  !*** ./src/app/my-guard.guard.ts ***!
-  \***********************************/
-/*! exports provided: MyGuardGuard */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyGuardGuard", function() { return MyGuardGuard; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var MyGuardGuard = /** @class */ (function () {
-    function MyGuardGuard() {
-    }
-    MyGuardGuard.prototype.canActivate = function (next, state) {
-        // your  logic goes here
-        return false;
-    };
-    MyGuardGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        })
-    ], MyGuardGuard);
-    return MyGuardGuard;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/not-found/not-found.component.css":
 /*!***************************************************!*\
   !*** ./src/app/not-found/not-found.component.css ***!
@@ -1740,56 +3053,36 @@ var NotFoundComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/second/second.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/second/second.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlY29uZC9zZWNvbmQuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/second/second.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/second/second.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  second works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/second/second.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/second/second.component.ts ***!
-  \********************************************/
-/*! exports provided: SecondComponent */
+/***/ "./src/app/safe.pipe.ts":
+/*!******************************!*\
+  !*** ./src/app/safe.pipe.ts ***!
+  \******************************/
+/*! exports provided: SafePipe */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SecondComponent", function() { return SecondComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SafePipe", function() { return SafePipe; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 
 
-var SecondComponent = /** @class */ (function () {
-    function SecondComponent() {
+
+var SafePipe = /** @class */ (function () {
+    function SafePipe(_sanitizer) {
+        this._sanitizer = _sanitizer;
     }
-    SecondComponent.prototype.ngOnInit = function () {
+    SafePipe.prototype.transform = function (v) {
+        return this._sanitizer.bypassSecurityTrustHtml(v);
     };
-    SecondComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-second',
-            template: __webpack_require__(/*! ./second.component.html */ "./src/app/second/second.component.html"),
-            styles: [__webpack_require__(/*! ./second.component.css */ "./src/app/second/second.component.css")]
+    SafePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'safe1'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], SecondComponent);
-    return SecondComponent;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+    ], SafePipe);
+    return SafePipe;
 }());
 
 
@@ -1990,7 +3283,7 @@ module.exports = ".highcharts-figure, .highcharts-data-table table {\r\n    min-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  sort works!\n</p>\n<div>\n  <input [(ngModel)]=\"totalReord\" type=\"number\">\n  <button type=\"button\" (click)=\"generateRandomData()\" class=\"btn btn-primary\">Reset</button>\n  <input class=\"pl_5 ml_5\" (change)=\"checked = !checked\" type=\"checkbox\" [checked]=\"checked\">\n  <span *ngIf=\"time\" class=\"pl_5 fr\">time {{time}}</span>\n\n</div>\n<div class=\"button\">\n  <button type=\"button\" (click)=\"bubbleSort(1)\" class=\"btn btn-primary\">bubble Sort </button>\n  <button type=\"button\" (click)=\"insertionSort(2)\" class=\"btn btn-primary\">Insertion sort</button>\n  <button type=\"button\" (click)=\"heapSort(7)\" class=\"btn btn-primary\">heap Sort</button>\n\n  <button type=\"button\" (click)=\"selectionSort(3)\" class=\"btn btn-primary\">Selection sort</button>\n  <button type=\"button\" (click)=\"shellSort(4)\" class=\"btn btn-primary\">Shell sort</button>\n  <button type=\"button\" (click)=\"quickSort(5)\" class=\"btn btn-primary\">quick Sort</button>\n  \n  <button type=\"button\" (click)=\"mergeSort(6)\" class=\"btn btn-primary\">Merge sort</button>\n \n</div>\n<div id=\"container\"> </div>\n<div class=\"explain\">\n  <div [ngSwitch]=\"active\">\n    <div class=\"sort_elment\" *ngSwitchCase=\"1\">\n      bubble sort\n      <ul>\n        <li>Highest element goes to end</li>\n        <li>\n         Compare with next element if its greater then swap\n        </li>\n        <li>\n          Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse sorted.\n        </li>\n        <li>\n          To much swap if starting element it Big\n          </li>\n          <li>\n            slow so many data to many swap\n          </li>\n      </ul>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"2\">\n      <div>Insertion sort</div>\n      <ul>\n        <li>\n         If current (a[i]) element is greater than its prvious element(a[i--]) shift previous element by\n         a[j+1] = a[j]; and a[j+1] = a[i] \n         </li>\n        <li>\n        We check in previous value shift all value which are greater than current value and place current\n        value at its place ie. array remail sorted till i \n        </li>\n         <li>\n          Time Complexity: O(n*2)\n         </li>\n         <li>\n         To much swap if ending element it small\n         </li>\n         <li>\n          slow so many data to many swap\n        </li>\n      </ul>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"3\">\n      <div>Selection sort</div>\n      <ul>\n        <li>\n          Small element comes at first\n         </li>\n        <li>\n          selet the smallest element replace with current :- repeat \n        </li>\n         <li>\n          Time Complexity: O(n2)\n         </li>\n      </ul>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"4\">\n      Shell sort\n      <li>\n       It work as insertion sort. we compare a[j] with a[j-h] and swap keep doing it till h =1\n      </li>\n      <li>\n       Instead of comparing to all element we sort with h gap  h = 3h +1 && h < data.length\n       we keep decreasing the gap till 1\n      </li>\n      <li>\n       sorting alogrithm : O(n*n)\n      </li>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"5\">\n      quick sort\n      <li>\n        Divide and conqure\n      </li>\n      <li>\n        We create partition use it in recursion. Partition we divide array in 2 parts based\n        pivot value that is last element\n      </li>\n      <li>\n        It get divided into 2 parts left is less than pivot value and right is greater\n      </li>\n      <li>\n       sorting alogrithm : O(n*n)\n      </li>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"6\">\n      Merge sort\n      <ul>\n        <li>\n          Divide and conqure ie. divide and merge \n        </li>\n        <li>\n        Best sorting alogrithm : O(nlog(n))\n        </li>\n      </ul>\n    </div>\n    <div class=\"sort_elment\" *ngSwitchCase=\"7\">\n      Heap Sort\n      <ul>\n        <li>Priority queue</li>\n        <li>heapify :- current node should be grater than its children</li>\n        <li>\n          parent is greater than child. priority queue Max heap or min heap\n        </li>\n        <li>\n          heap visualize as array nearly binary tree\n        </li>\n        <li>\n          We have to heapify only n/2 element (Because lower half does not have any child)\n        </li>\n        <li>\n          For sorting heapify array. create new array of result with same size<br>\n          Now replace first element with last elemnt<br>\n          store first element in different array (result) in last position<br>\n          now reduce the array size by 1<br>\n          keep doing till arr.length ==0         \n\n        </li>\n      </ul>\n      <pre>\n        <code [innerHTML]=\"code[7]\"></code>\n      </pre>\n\n    </div>\n  </div>\n</div>"
+module.exports = "<p>\r\n  sort works!\r\n</p>\r\n<div>\r\n  <input [(ngModel)]=\"totalReord\" type=\"number\">\r\n  <button type=\"button\" (click)=\"generateRandomData()\" class=\"btn btn-primary\">Reset</button>\r\n  <input class=\"pl_5 ml_5\" (change)=\"checked = !checked\" type=\"checkbox\" [checked]=\"checked\">\r\n  <span *ngIf=\"time\" class=\"pl_5 fr\">time {{time}}</span>\r\n\r\n</div>\r\n<div class=\"button\">\r\n  <button type=\"button\" (click)=\"bubbleSort(1)\" class=\"btn btn-primary\">bubble Sort </button>\r\n  <button type=\"button\" (click)=\"insertionSort(2)\" class=\"btn btn-primary\">Insertion sort</button>\r\n  <button type=\"button\" (click)=\"heapSort(7)\" class=\"btn btn-primary\">heap Sort</button>\r\n\r\n  <button type=\"button\" (click)=\"selectionSort(3)\" class=\"btn btn-primary\">Selection sort</button>\r\n  <button type=\"button\" (click)=\"shellSort(4)\" class=\"btn btn-primary\">Shell sort</button>\r\n  <button type=\"button\" (click)=\"quickSort(5)\" class=\"btn btn-primary\">quick Sort</button>\r\n  \r\n  <button type=\"button\" (click)=\"mergeSort(6)\" class=\"btn btn-primary\">Merge sort</button>\r\n \r\n</div>\r\n<div id=\"container\"> </div>\r\n<div class=\"explain\">\r\n  <div [ngSwitch]=\"active\">\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"1\">\r\n      bubble sort\r\n      <ul>\r\n        <li>Highest element goes to end</li>\r\n        <li>\r\n         Compare with next element if its greater then swap\r\n        </li>\r\n        <li>\r\n          Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse sorted.\r\n        </li>\r\n        <li>\r\n          To much swap if starting element it Big\r\n          </li>\r\n          <li>\r\n            slow so many data to many swap\r\n          </li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"2\">\r\n      <div>Insertion sort</div>\r\n      <ul>\r\n        <li>\r\n         If current (a[i]) element is greater than its prvious element(a[i--]) shift previous element by\r\n         a[j+1] = a[j]; and a[j+1] = a[i] \r\n         </li>\r\n        <li>\r\n        We check in previous value shift all value which are greater than current value and place current\r\n        value at its place ie. array remail sorted till i \r\n        </li>\r\n         <li>\r\n          Time Complexity: O(n*2)\r\n         </li>\r\n         <li>\r\n         To much swap if ending element it small\r\n         </li>\r\n         <li>\r\n          slow so many data to many swap\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"3\">\r\n      <div>Selection sort</div>\r\n      <ul>\r\n        <li>\r\n          Small element comes at first\r\n         </li>\r\n        <li>\r\n          selet the smallest element replace with current :- repeat \r\n        </li>\r\n         <li>\r\n          Time Complexity: O(n2)\r\n         </li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"4\">\r\n      Shell sort\r\n      <li>\r\n       It work as insertion sort. we compare a[j] with a[j-h] and swap keep doing it till h =1\r\n      </li>\r\n      <li>\r\n       Instead of comparing to all element we sort with h gap  h = 3h +1 && h < data.length\r\n       we keep decreasing the gap till 1\r\n      </li>\r\n      <li>\r\n       sorting alogrithm : O(n*n)\r\n      </li>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"5\">\r\n      quick sort\r\n      <li>\r\n        Divide and conqure\r\n      </li>\r\n      <li>\r\n        We create partition use it in recursion. Partition we divide array in 2 parts based\r\n        pivot value that is last element\r\n      </li>\r\n      <li>\r\n        It get divided into 2 parts left is less than pivot value and right is greater\r\n      </li>\r\n      <li>\r\n       sorting alogrithm : O(n*n)\r\n      </li>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"6\">\r\n      Merge sort\r\n      <ul>\r\n        <li>\r\n          Divide and conqure ie. divide and merge \r\n        </li>\r\n        <li>\r\n        Best sorting alogrithm : O(nlog(n))\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"sort_elment\" *ngSwitchCase=\"7\">\r\n      Heap Sort\r\n      <ul>\r\n        <li>Priority queue</li>\r\n        <li>heapify :- current node should be grater than its children</li>\r\n        <li>\r\n          parent is greater than child. priority queue Max heap or min heap\r\n        </li>\r\n        <li>\r\n          heap visualize as array nearly binary tree\r\n        </li>\r\n        <li>\r\n          We have to heapify only n/2 element (Because lower half does not have any child)\r\n        </li>\r\n        <li>\r\n          For sorting heapify array. create new array of result with same size<br>\r\n          Now replace first element with last elemnt<br>\r\n          store first element in different array (result) in last position<br>\r\n          now reduce the array size by 1<br>\r\n          keep doing till arr.length ==0         \r\n\r\n        </li>\r\n      </ul>\r\n      <pre>\r\n        <code [innerHTML]=\"code[7]\"></code>\r\n      </pre>\r\n\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2023,7 +3316,10 @@ var SortComponent = /** @class */ (function () {
         this.code = [];
     }
     SortComponent.prototype.ngOnInit = function () {
-        this.generateRandomData();
+        var _this = this;
+        setTimeout(function () {
+            _this.generateRandomData();
+        }, 1000);
         this.code.length = 10;
         this.code[7] = "\n    heapify(arr) {\n      var n = Math.floor(arr.length / 2);\n      for (var i = n; i >= 0; i--) {\n        heapifyAtIndex(arr, i)\n      }\n      function heapifyAtIndex(arr, i) {\n        var largest = i;\n        var left = 2 * i + 1\n        var right = 2 * i + 2\n        if (arr[largest] < arr[left]) {\n          largest = left;\n        }\n        if (arr[largest] < arr[right]) {\n          largest = right;\n        }\n  \n        if (i !== largest) {\n          const temp = arr[largest];\n          arr[largest] = arr[i]\n          arr[i] = temp;\n          if (2 * largest < arr.length) {\n            heapifyAtIndex(arr, largest)\n          }\n        }\n      }\n      return arr;\n    }\n  \n    ";
     };
@@ -2488,41 +3784,6 @@ var SortComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/uppercase.pipe.ts":
-/*!***********************************!*\
-  !*** ./src/app/uppercase.pipe.ts ***!
-  \***********************************/
-/*! exports provided: UppercasePipe */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UppercasePipe", function() { return UppercasePipe; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var UppercasePipe = /** @class */ (function () {
-    function UppercasePipe() {
-        this.i = 0;
-    }
-    UppercasePipe.prototype.transform = function (value, args) {
-        console.log(this.i++);
-        return value.toUpperCase();
-    };
-    UppercasePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
-            name: 'uppercase',
-            pure: true
-        })
-    ], UppercasePipe);
-    return UppercasePipe;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -2622,21 +3883,24 @@ var LoggingInterceptor = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _app_injector_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-injector.service */ "./src/app-injector.service.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_injector_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-injector.service */ "./src/app-injector.service.ts");
 
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"]).then(function (moduleRef) {
-    _app_injector_service__WEBPACK_IMPORTED_MODULE_4__["AppInjector"].setInjector(moduleRef.injector);
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"]).then(function (moduleRef) {
+    _app_injector_service__WEBPACK_IMPORTED_MODULE_5__["AppInjector"].setInjector(moduleRef.injector);
 })
     .catch(function (err) { return console.error(err); });
 
