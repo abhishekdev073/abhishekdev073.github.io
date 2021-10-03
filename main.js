@@ -3236,7 +3236,7 @@ var data = {
             question: 'Instance versus static members ',
             responses: [{
                     value: 'instance method will be different for each instance. static will be same for all',
-                    image: 'instance_v_static',
+                    image: 'instance_vs_static.png',
                     desc: []
                 }]
         },
@@ -4278,7 +4278,7 @@ var data = {
             question: 'LSP',
             responses: [{
                     value: 'Liskov Substitution Principle',
-                    image: 'LSP.PNG',
+                    image: 'LSP.png',
                     desc: [
                         'use derived class instead of a parent class behave in the same manner without modification',
                         'does not impact parent class'
@@ -5822,6 +5822,28 @@ var data = [{
         responses: [{
                 value: "Perform multiple operation if one fail undo all of them",
             }]
+    },
+    {
+        question: 'MongoDb query',
+        responses: [
+            {
+                style: {
+                    width: '100%'
+                },
+                image: '/mongoDbQuery.png'
+            }
+        ]
+    },
+    {
+        question: 'MongDb Cheat shit',
+        responses: [
+            {
+                style: {
+                    width: '100%'
+                },
+                image: '/mongoDbCheatShit.png'
+            }
+        ]
     }
 ];
 
